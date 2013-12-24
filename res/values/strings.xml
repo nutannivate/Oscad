@@ -14,20 +14,22 @@
     <string name="title_section9">Lab migration</string>
     <string name="title_section10">Workshops</string>
     
-    <string name="home">
+    <string name="intro">
        	<p style="text-align: justify; margin-top: 10px; margin-bottom: 5px; margin-left: 20px;"><b>Oscad</b> is an open source EDA tool for circuit design, simulation, analysis and PCB design.  It is an integrated tool built using open source software such as KiCad (<a href="http://www.kicad-pcb.org" title="http://www.kicad-pcb.org">http://www.kicad-pcb.org</a>), Ngspice (<a href="http://ngspice.sourceforge.net/" title="http://ngspice.sourceforge.net/">http://ngspice.sourceforge.net</a>) and Scilab (<a href="http://www.scilab.org/" title="http://www.scilab.org/">http://www.scilab.org</a>).  Oscad is released under GPL.</p>
-		<![CDATA[<br>]]>
-		<h1 style="color: #033E6B; font-weight: normal; font-size: 18px; padding: 10px;">Features of Oscad</h1><![CDATA[<br>]]>
-		<ul>
-		<li>Draw circuits using KiCad, create a netlist and simulate using Ngspice.</li><![CDATA[<br>]]>
-		<li>Do PCB design and generate Gerber files using KiCad.</li><![CDATA[<br>]]>
-		<li>Add/Edit device models and subcircuits using the Model Builder and Subcircuit Builder tools.</li><![CDATA[<br>]]>
-		<li>Generate differential equations of analog circuits and solve them through Scilab. This feature is unique to Oscad.</li><![CDATA[<br>]]>
-		<li>Runs on Ubuntu Linux and a few flavours of Windows (XP and 7, at present).</li><![CDATA[<br>]]>
-		</ul>
-		<h1  style="color: #033E6B; font-weight: normal; font-size: 18px; padding: 10px;">Book on Oscad</h1><![CDATA[<br>]]>
-		<p style="text-align: justify; margin-top: 10px; margin-bottom: 5px; margin-left: 20px;">Oscad: An open source EDA tool for circuit design, simulation, analysis and PCB design - Shroff Publishers and Distributers Pvt. Ltd, June 2013</p>
-		<p style="text-align: justify; margin-top: 10px; margin-bottom: 5px; margin-left: 20px;">The E-version of the Oscad book, Oscad software, examples and Spoken Tutorials that explain the use of Oscad are available under the links : Downloads (<a href="http://oscad.in/downloads" title="http://oscad.in/downloads">http://oscad.in/downloads</a>) and Spoken Tutorials (<a href="http://oscad.in/resources/tutorials" title="http://oscad.in/resources/tutorials">http://oscad.in/resources/tutorials</a>).</p>
+	</string>
+	<string name="features">
+	    <![CDATA[
+		- Draw circuits using KiCad, create a netlist and simulate using Ngspice.<br>
+		- Do PCB design and generate Gerber files using KiCad.<br>
+		- Add/Edit device models and subcircuits using the Model Builder and Subcircuit Builder tools.<br>
+		- Generate differential equations of analog circuits and solve them through Scilab. This feature is unique to Oscad.<br>
+		- Runs on Ubuntu Linux and a few flavours of Windows (XP and 7, at present).]]>
+	</string>
+	<string name="books">
+	    <![CDATA[
+		- Oscad: An open source EDA tool for circuit design, simulation, analysis and PCB design - Shroff Publishers and Distributers Pvt. Ltd, June 2013<br>
+		- The E-version of the Oscad book, Oscad software, examples and Spoken Tutorials that explain the use of Oscad are available under the links : Downloads (<a href="http://oscad.in/downloads" title="http://oscad.in/downloads">http://oscad.in/downloads</a>) and Spoken Tutorials (<a href="http://oscad.in/resources/tutorials" title="http://oscad.in/resources/tutorials">http://oscad.in/resources/tutorials</a>).
+		]]>
 	</string>
 
     <string name="contact">

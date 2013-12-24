@@ -188,9 +188,18 @@ public class MainActivity extends FragmentActivity implements
 				TextView homecontentTextView = (TextView) rootView
 						.findViewById(R.id.intro);
 				homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-				final SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.home)));
+				SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.intro)));
 				Linkify.addLinks(s, Linkify.WEB_URLS);
 				homecontentTextView.setText(s);
+				
+				homecontentTextView = (TextView) rootView
+						.findViewById(R.id.features);
+				homecontentTextView.setText(Html.fromHtml(getString(R.string.features)));
+				
+				homecontentTextView = (TextView) rootView
+						.findViewById(R.id.books);
+				homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+				homecontentTextView.setText(Html.fromHtml(getString(R.string.books)));
 			}
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
 				rootView = inflater.inflate(R.layout.fragment_main_dummy,
