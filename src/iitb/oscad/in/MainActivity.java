@@ -12,6 +12,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -178,12 +181,44 @@ public class MainActivity extends FragmentActivity implements
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main_dummy,
-					container, false);
-			TextView contentTextView = (TextView) rootView
-					.findViewById(R.id.section_label);
+			View rootView = null;
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-				contentTextView.setText(Html.fromHtml(getString(R.string.home)));
+				rootView = inflater.inflate(R.layout.home,
+						container, false);
+				TextView homecontentTextView = (TextView) rootView
+						.findViewById(R.id.intro);
+				homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+				final SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.home)));
+				Linkify.addLinks(s, Linkify.WEB_URLS);
+				homecontentTextView.setText(s);
+			}
+			if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
+				rootView = inflater.inflate(R.layout.fragment_main_dummy,
+						container, false);
+				TextView contentTextView = (TextView) rootView
+						.findViewById(R.id.section_label);
+				contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+				final SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.contact)));
+				Linkify.addLinks(s, Linkify.WEB_URLS);
+				contentTextView.setText(s);
+			}
+			if (getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
+				rootView = inflater.inflate(R.layout.fragment_main_dummy,
+						container, false);
+				TextView contentTextView = (TextView) rootView
+						.findViewById(R.id.section_label);
+				contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+				final SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.weblinks)));
+				Linkify.addLinks(s, Linkify.WEB_URLS);
+				contentTextView.setText(s);
+			}
+			if (getArguments().getInt(ARG_SECTION_NUMBER) == 8) {
+				rootView = inflater.inflate(R.layout.fragment_main_dummy,
+						container, false);
+				TextView contentTextView = (TextView) rootView
+						.findViewById(R.id.section_label);
+				contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+				contentTextView.setText(Html.fromHtml(getString(R.string.text_book_companion)));
 			}
 			
 			return rootView;
