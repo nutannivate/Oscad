@@ -43,5 +43,44 @@
 		<li ><![CDATA[<a href="http://www.oscad.in/textbook_run">Download Codes</a>]]></li>
 		</ul>
     </string>
+    
+     <string name="FAQs">
+        
+       If OSCAD is installed on 64 bit Windows XP, there will 
+       be a problem launching OSCAD through Start menu. Launch OSCAD through command prompt instead. To do this, open command prompt
+        and type the following one after the other:
+  
+    </string>
+    
+    <string name="FAQs2">
+         - cd \\ &lt;br /&gt;
+ 	  	 - cd OSCAD\\OSCAD\\forntEnd&lt;br /&gt;
+  		 - python oscad.py
+    </string>
+    
+    
+    <string name="FAQs3">
+        Now Oscad window will open up.
+        
+     </string>
+
+    
+    <string name="FAQs5">
+        
+          If a footprint library error is displayed on opening Footprint Editor, do the following: 
+    </string>
+      <string name="FAQs4">
+    
+	    -  On the footprint editor window, click on Preferences and choose Options. &lt;br /&gt;
+	
+	    -  In the footprint library files section, click on ADD. &lt;br /&gt;
+	
+	    -  Browse to the path where kicad is installed. Then go to KiCad\share\modules. &lt;br /&gt;
+	
+	    -  Manually select all the .mod files and click on Open. &lt;br /&gt;
+	
+	    -  Do the same for KiCad\share\modules\packages3d.
+        
+    </string>
 
 </resources>

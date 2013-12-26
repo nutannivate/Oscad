@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -248,6 +249,34 @@ public class MainActivity extends FragmentActivity implements
 						.findViewById(R.id.section_label);
 				contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
 				contentTextView.setText(Html.fromHtml(getString(R.string.text_book_companion)));
+			}else if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
+				rootView = inflater.inflate(R.layout.faqs,
+						container, false);
+				
+				int list[]=new int[]{R.id.textView2,R.id.textView3,R.id.textView4,R.id.textView6,R.id.textView7};
+				
+				int list1[]=new int[]{R.string.FAQs,R.string.FAQs2,R.string.FAQs3,R.string.FAQs4,R.string.FAQs5};
+
+				
+				for (int i = 0; i < list.length; i++) {
+					TextView contentTextView = (TextView) rootView
+							.findViewById(list[i]);
+					contentTextView.setBackgroundColor(Color.parseColor("#15060b"));
+					contentTextView.setTextColor(Color.parseColor("#d0ad85"));
+					contentTextView.setText(Html.fromHtml(getString(list1[i])));
+
+				}
+				
+				
+				int list2[]=new int[]{R.id.textView1,R.id.textView5};
+				
+				for (int i = 0; i < list2.length; i++) {
+					TextView contentTextView1 = (TextView) rootView
+							.findViewById(list2[i]);
+					contentTextView1.setBackgroundColor(Color.parseColor("#302b31"));
+					contentTextView1.setTextColor(Color.parseColor("#d0ad85"));
+				}
+
 			}
 			
 			return rootView;
