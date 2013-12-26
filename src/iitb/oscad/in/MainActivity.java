@@ -202,24 +202,44 @@ public class MainActivity extends FragmentActivity implements
 				homecontentTextView.setText(Html.fromHtml(getString(R.string.books)));
 			}
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
-				rootView = inflater.inflate(R.layout.fragment_main_dummy,
+				rootView = inflater.inflate(R.layout.contact,
 						container, false);
-				TextView contentTextView = (TextView) rootView
-						.findViewById(R.id.section_label);
-				contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-				final SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.contact)));
-				Linkify.addLinks(s, Linkify.WEB_URLS);
-				contentTextView.setText(s);
+				
+				String[] contact_to = new String[]{"Textbook Companion : http://textbook-companion@oscad.in",
+						"Lab migration : http://lab-migration@oscad.in",
+						"SELF workshops : http://SELF-workshop@oscad.in",
+						"Oscad development and enhancing its capabilities : http://Oscad-dev@oscad.in",
+						"Feedback on Oscad book : http://Oscad-textbook@oscad.in"};
+				int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
+				
+				for (int i = 0; i < contact_to.length; i++) {
+					TextView contentTextView = (TextView) rootView.findViewById(ids[i]);
+					contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+					SpannableString s = new SpannableString(Html.fromHtml(contact_to[i]));
+					Linkify.addLinks(s, Linkify.WEB_URLS);
+					contentTextView.setText(s);
+				}
+				
 			}
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
-				rootView = inflater.inflate(R.layout.fragment_main_dummy,
+				//using contact layout for weblinks
+				rootView = inflater.inflate(R.layout.contact,
 						container, false);
-				TextView contentTextView = (TextView) rootView
-						.findViewById(R.id.section_label);
-				contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-				final SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.weblinks)));
-				Linkify.addLinks(s, Linkify.WEB_URLS);
-				contentTextView.setText(s);
+				
+				String[] weblinks = new String[]{"http://fossee.in/",
+						"http://scilab.in/",
+						"http://python.fossee.in/",
+						"http://cfd.fossee.in/",
+						"http://spoken-tutorial.org/"};
+				int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
+				
+				for (int i = 0; i < weblinks.length; i++) {
+					TextView contentTextView = (TextView) rootView.findViewById(ids[i]);
+					contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+					SpannableString s = new SpannableString(Html.fromHtml(weblinks[i]));
+					Linkify.addLinks(s, Linkify.WEB_URLS);
+					contentTextView.setText(s);
+				}
 			}
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 8) {
 				rootView = inflater.inflate(R.layout.fragment_main_dummy,

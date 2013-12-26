@@ -31,25 +31,6 @@
 		- The E-version of the Oscad book, Oscad software, examples and Spoken Tutorials that explain the use of Oscad are available under the links : Downloads (<a href="http://oscad.in/downloads" title="http://oscad.in/downloads">http://oscad.in/downloads</a>) and Spoken Tutorials (<a href="http://oscad.in/resources/tutorials" title="http://oscad.in/resources/tutorials">http://oscad.in/resources/tutorials</a>).
 		]]>
 	</string>
-
-    <string name="contact">
-        <p><b>Please address your queries/suggestions to following email ids </b></p><![CDATA[<br>]]>
-		<p>Textbook Companion : http://textbook-companion@oscad.in</p><![CDATA[<br>]]>
-		<p>Lab migration : http://lab-migration@oscad.in</p><![CDATA[<br>]]>
-		<p>SELF workshops : http://SELF-workshop@oscad.in</p><![CDATA[<br>]]>
-		<p>Oscad development and enhancing its capabilities : http://Oscad-dev@oscad.in</p><![CDATA[<br>]]>
-		<p>Feedback on Oscad book : http://Oscad-textbook@oscad.in</p>
-    </string>	
-    
-    <string name="weblinks">
-        <ul>
-		<li><a href="http://fossee.in/" target="_blank">http://fossee.in</a></li><![CDATA[<br>]]>
-		<li><a href="http://scilab.in/" target="_blank">http://scilab.in</a></li><![CDATA[<br>]]>
-		<li><a href="http://python.fossee.in/" target="_blank">http://python.fossee.in</a></li><![CDATA[<br>]]>
-		<li><a href="http://cfd.fossee.in/" target="_blank">http://cfd.fossee.in</a></li><![CDATA[<br>]]>
-		<li><a href="http://spoken-tutorial.org/" target="_blank">http://spoken-tutorial.org</a></li>
-		</ul>
-    </string>
     
     <string name="text_book_companion">
         <ul><li ><![CDATA[<a href="http://www.oscad.in/textbook-companion-project" title="">Textbook Companion Project</a>]]></li><![CDATA[<br>]]>
