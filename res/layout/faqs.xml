@@ -26,7 +26,8 @@
         android:text="Installation issues and solutions" 
         android:layout_gravity="center_vertical"
         android:textSize="18dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textStyle="bold"/>
     
        <TextView
         android:id="@+id/textView2"
@@ -93,7 +94,8 @@
         android:text="Usage issues and solutions" 
         android:layout_gravity="center_vertical"
         android:textSize="18dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textStyle="bold"/>
     
          <TextView
         android:id="@+id/textView7"
@@ -132,6 +134,19 @@
         />
 
    </LinearLayout>
-
+  <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+     
+        
+    
+        />
 </LinearLayout>
 </ScrollView>

@@ -67,8 +67,9 @@
     
     <string name="FAQs5">
         
-          If a footprint library error is displayed on opening Footprint Editor, do the following: 
+        1.  If a footprint library error is displayed on opening Footprint Editor, do the following: 
     </string>
+    
       <string name="FAQs4">
     
 	    -  On the footprint editor window, click on Preferences and choose Options. &lt;br /&gt;
@@ -80,7 +81,27 @@
 	    -  Manually select all the .mod files and click on Open. &lt;br /&gt;
 	
 	    -  Do the same for KiCad\share\modules\packages3d.
+      
+      
+      
         
     </string>
+    
+      
+      <string name="FAQs6">
+          
+          
+
+		2. If on launching Ngspice, an error, "System cannot execute the program" occurs, download and install the exe file 
+		from <![CDATA[<a href="http://www.microsoft.com/en-us/download/details.aspx?id=29">here</a>]]>  then
+		 Relaunch Oscad.&lt;br /&gt;&lt;br /&gt;
+
+
+   		3. If you are unable to launch KiCad, then uninstall KiCad and install it again in the C directory. For installing, go to Oscad windows installer folder. Go to the folder resources. Double click on the KiCad.exe file. Give the installation path as C:\ After installation, change the environment variable path of Kicad to C:\KiCad\bin.&lt;br /&gt;
+          
+      </string>
+      
+      
+      
 
 </resources>

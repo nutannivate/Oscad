@@ -1,9 +1,16 @@
 package iitb.oscad.in;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.app.ListActivity;
+import android.content.Context;
+import android.database.DataSetObserver;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,7 +29,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -41,15 +55,16 @@ public class MainActivity extends FragmentActivity implements
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-		// Set up the action bar.
+		
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
@@ -175,6 +190,7 @@ public class MainActivity extends FragmentActivity implements
 		 * fragment.
 		 */
 		public static final String ARG_SECTION_NUMBER = "section_number";
+        Context thisContext;
 
 		public DummySectionFragment() {
 		}
@@ -243,21 +259,48 @@ public class MainActivity extends FragmentActivity implements
 				}
 			}
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 8) {
-				rootView = inflater.inflate(R.layout.fragment_main_dummy,
-						container, false);
-				TextView contentTextView = (TextView) rootView
-						.findViewById(R.id.section_label);
-				contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-				contentTextView.setText(Html.fromHtml(getString(R.string.text_book_companion)));
-			}else if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
+				
+				rootView = inflater.inflate(R.layout.list,container, false);
+				
+				 String[] from = new String[] {"names_"};
+				 int[] to = new int[] {R.id.tvname};
+	        
+			     final List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();
+			     
+					String names[] = new String[]{"Textbook Companion Project","Internship","Guidelines for Coding","Honorarium","Textbook Companion FAQ's","Completed Books","Download Codes"};
+
+			        for (int i = 0; i < names.length; i++) {
+					     HashMap<String, String> map = new HashMap<String, String>();
+			        	 map.put("names_",names[i]);
+				         fillMaps.add( map);
+
+			        }
+
+			        SimpleAdapter adapter;
+			        adapter = new SimpleAdapter(getActivity().getApplicationContext(), fillMaps,
+		 				R.layout.text_book_companion, from, to);
+				
+			        ListView lv = (ListView) rootView.findViewById( R.id.listView1 );
+			        lv.setAdapter(adapter);		
+			        
+			        lv.setOnItemClickListener(new OnItemClickListener() {
+
+						@Override
+						public void onItemClick(AdapterView a, View v, int position, long id) {
+							
+						}
+					});
+			        
+
+		      
+			}if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
 				rootView = inflater.inflate(R.layout.faqs,
 						container, false);
 				
-				int list[]=new int[]{R.id.textView2,R.id.textView3,R.id.textView4,R.id.textView6,R.id.textView7};
+				int list[]=new int[]{R.id.textView2,R.id.textView3,R.id.textView4,R.id.textView6,R.id.textView7,R.id.textView8};
 				
-				int list1[]=new int[]{R.string.FAQs,R.string.FAQs2,R.string.FAQs3,R.string.FAQs4,R.string.FAQs5};
+				int list1[]=new int[]{R.string.FAQs,R.string.FAQs2,R.string.FAQs3,R.string.FAQs4,R.string.FAQs5,R.string.FAQs6};
 
-				
 				for (int i = 0; i < list.length; i++) {
 					TextView contentTextView = (TextView) rootView
 							.findViewById(list[i]);
@@ -267,20 +310,18 @@ public class MainActivity extends FragmentActivity implements
 
 				}
 				
-				
 				int list2[]=new int[]{R.id.textView1,R.id.textView5};
 				
 				for (int i = 0; i < list2.length; i++) {
-					TextView contentTextView1 = (TextView) rootView
-							.findViewById(list2[i]);
+					TextView contentTextView1 = (TextView) rootView.findViewById(list2[i]);
 					contentTextView1.setBackgroundColor(Color.parseColor("#302b31"));
 					contentTextView1.setTextColor(Color.parseColor("#d0ad85"));
 				}
-
 			}
 			
 			return rootView;
 		}
-	}
 
+		}
+	
 }
