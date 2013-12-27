@@ -10,8 +10,10 @@ import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -28,10 +30,12 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -218,6 +222,39 @@ public class MainActivity extends FragmentActivity implements
 				homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
 				homecontentTextView.setText(Html.fromHtml(getString(R.string.books)));
 			}
+			if(getArguments().getInt(ARG_SECTION_NUMBER)== 3){
+				//spoken tutorials
+				rootView = inflater.inflate(R.layout.spoken_tutorial,
+						container, false);
+				Button windowInstuction = (Button)rootView.findViewById(R.id.windowInstruction);
+				windowInstuction.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						//Toast.makeText(getActivity(), "hi", Toast.LENGTH_SHORT).show();
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf")));
+					}
+				});
+				
+				Button linuxSheet = (Button)rootView.findViewById(R.id.linuxSheet);
+				linuxSheet.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Linux.pdf")));
+					}
+				});
+				
+				Button windowSheet = (Button)rootView.findViewById(R.id.windowSheet);
+				windowSheet.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Windows.pdf")));
+					}
+				});
+				
+			}			
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
 				rootView = inflater.inflate(R.layout.contact,
 						container, false);
