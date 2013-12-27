@@ -222,6 +222,39 @@ public class MainActivity extends FragmentActivity implements
 				homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
 				homecontentTextView.setText(Html.fromHtml(getString(R.string.books)));
 			}
+			if(getArguments().getInt(ARG_SECTION_NUMBER)== 2){
+				//spoken tutorials
+				rootView = inflater.inflate(R.layout.downloads,
+						container, false);
+				Button windowInstuction = (Button)rootView.findViewById(R.id.window10);
+				windowInstuction.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						//Toast.makeText(getActivity(), "hi", Toast.LENGTH_SHORT).show();
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf")));
+					}
+				});
+				
+				Button linuxSheet = (Button)rootView.findViewById(R.id.window1);
+				linuxSheet.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Linux.pdf")));
+					}
+				});
+				
+				Button windowSheet = (Button)rootView.findViewById(R.id.window15);
+				windowSheet.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Windows.pdf")));
+					}
+				});
+				
+			}			
 			if(getArguments().getInt(ARG_SECTION_NUMBER)== 3){
 				//spoken tutorials
 				rootView = inflater.inflate(R.layout.spoken_tutorial,
