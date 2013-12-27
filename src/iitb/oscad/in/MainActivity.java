@@ -2,16 +2,14 @@ package iitb.oscad.in;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
-
-
+import java.util.Map;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,24 +17,22 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
-import android.view.Gravity;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Button;
-import android.widget.ListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -59,7 +55,10 @@ public class MainActivity extends FragmentActivity implements
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
-	
+	static List<String> groupList;
+    static List<String> childList;
+    static Map<String, List<String>> tutorials;
+    static ExpandableListView expListView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -287,6 +286,31 @@ public class MainActivity extends FragmentActivity implements
 					}
 				});
 				
+				//expandable list activity
+			    
+			    createGroupList();
+			    
+		        createCollection();
+		 
+		        expListView = (ExpandableListView) rootView.findViewById(R.id.expandableListView1);
+		        final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
+		                getActivity(), groupList, tutorials);
+		        expListView.setAdapter(expListAdapter);
+		 
+		        //setGroupIndicatorToRight();
+		 
+		        expListView.setOnChildClickListener(new OnChildClickListener() {
+		 
+		            public boolean onChildClick(ExpandableListView parent, View v,
+		                    int groupPosition, int childPosition, long id) {
+		                final String selected = (String) expListAdapter.getChild(
+		                        groupPosition, childPosition);
+		                Toast.makeText(getActivity().getBaseContext(), selected, Toast.LENGTH_LONG)
+		                        .show();
+		 
+		                return true;
+		            }
+		        });
 			}			
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
 				rootView = inflater.inflate(R.layout.contact,
@@ -391,6 +415,62 @@ public class MainActivity extends FragmentActivity implements
 			
 			return rootView;
 		}
+
+		private void createGroupList() {
+        groupList = new ArrayList<String>();
+        groupList.add("Oscad");
+        groupList.add("KiCad");
+        groupList.add("Ngspice");
+    }
+ 
+    private void createCollection() {
+        // preparing FOSS tutorials(child)
+        String[] oscadTutorials = { "1. Introduction to Oscad", "2. Schematic Creation and Simulation using Oscad",
+                "3. Designing PCB using Oscad" };
+        String[] kicadTutorials = { "1. Designing circuit schematic in KiCad", 
+        		"2. Electric rule checking and Netlist generation", 
+        		"3. Mapping components in KiCad",
+        		"4. Designing printed circuit board in KiCad"};
+        String[] ngspiceTutorials = { "1. Operating point analysis in NGspice", "2. DC Sweep Analysis"};
+ 
+        tutorials = new LinkedHashMap<String, List<String>>();
+ 
+        for (String FOSS : groupList) {
+            if (FOSS.equals("Oscad")) {
+                loadChild(oscadTutorials);
+            }
+            else if (FOSS.equals("KiCad"))
+                loadChild(kicadTutorials);
+            else
+                loadChild(ngspiceTutorials);
+ 
+            tutorials.put(FOSS, childList);
+        }
+    }
+ 
+    private void loadChild(String[] fossTutorials) {
+        childList = new ArrayList<String>();
+        for (String model : fossTutorials)
+            childList.add(model);
+    }
+ 
+    private void setGroupIndicatorToRight() {
+        /* Get the screen width */
+        DisplayMetrics dm = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;
+ 
+        expListView.setIndicatorBounds(width - getDipsFromPixel(35), width
+                - getDipsFromPixel(5));
+    }
+ 
+    // Convert pixel to dip
+    public int getDipsFromPixel(float pixels) {
+        // Get the screen's density scale
+        final float scale = getResources().getDisplayMetrics().density;
+        // Convert the dps to pixels, based on density scale
+        return (int) (pixels * scale + 0.5f);
+    }
 
 		}
 	
