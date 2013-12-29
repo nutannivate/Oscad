@@ -225,37 +225,92 @@ public class MainActivity extends FragmentActivity implements
 			}
 			if(getArguments().getInt(ARG_SECTION_NUMBER)== 2){
 				//spoken tutorials
-				rootView = inflater.inflate(R.layout.downloads,
-						container, false);
-				Button windowInstuction = (Button)rootView.findViewById(R.id.window10);
+				rootView = inflater.inflate(R.layout.downloads,	container, false);
+				
+				
+				/***
+				 * Download oscad installer tar file for Linux
+				 */
+				TextView linux1 = (TextView)rootView.findViewById(R.id.down_linux);
+				linux1.setMovementMethod(LinkMovementMethod.getInstance());
+				String link_linux = "<a href='http://www.oscad.in/download/OSCAD_installer.tar.gz'>Oscad Installer - Linux</a>&nbsp;&nbsp;(6.2 MB)";
+				linux1.setText(Html.fromHtml(link_linux));
+
+				/***
+				 * Download oscad installer zip file for Windows
+				 */
+				TextView windows = (TextView)rootView.findViewById(R.id.down_oscad_IW);
+				windows.setMovementMethod(LinkMovementMethod.getInstance());
+				String text = "<a href='http://www.oscad.in/download/Oscad-windows-installer.zip'>Oscad Installer - Windows</a>&nbsp;&nbsp;(150 MB)";
+				windows.setText(Html.fromHtml(text));
+				
+				/***
+				 * Download oscad installation instrucion PDF file.
+				 */
+				TextView windowsInsta = (TextView)rootView.findViewById(R.id.down_oscad_II);
+				windowsInsta.setMovementMethod(LinkMovementMethod.getInstance());
+				String text1 = "<a href='http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf'>Oscad Installation Instructions for Windows</a>";
+				windowsInsta.setText(Html.fromHtml(text1));
+				
+				/***
+				 * Download oscad e-book pdf.
+				 */
+				Button windowInstuction = (Button)rootView.findViewById(R.id.down_Ebook);
 				windowInstuction.setOnClickListener(new OnClickListener() {
 					
 					@Override
 					public void onClick(View arg0) {
-						//Toast.makeText(getActivity(), "hi", Toast.LENGTH_SHORT).show();
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf")));
+						
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/oscad.pdf")));
+					}
+				});
+				/***
+				 * Download oscad example .
+				 */
+				Button osExample = (Button)rootView.findViewById(R.id.down_OE);
+				osExample.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/Examples.tar.gz")));
 					}
 				});
 				
-				Button linuxSheet = (Button)rootView.findViewById(R.id.window1);
+				
+				/***
+				 * Download oscad errata pdf .
+				 */
+				Button linuxSheet = (Button)rootView.findViewById(R.id.down_EOB);
 				linuxSheet.setOnClickListener(new OnClickListener() {
 					
 					@Override
 					public void onClick(View arg0) {
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Linux.pdf")));
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/errata.pdf")));
 					}
 				});
 				
-				Button windowSheet = (Button)rootView.findViewById(R.id.window15);
-				windowSheet.setOnClickListener(new OnClickListener() {
+				/***
+				 * Download Oscad Companion CD .
+				 */
+				Button linux = (Button)rootView.findViewById(R.id.down_OCCD);
+				linux.setOnClickListener(new OnClickListener() {
 					
 					@Override
 					public void onClick(View arg0) {
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Windows.pdf")));
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/download/Oscad.zip")));
 					}
 				});
 				
-			}			
+				/***
+				 * It will intent to micro book page 
+				 */
+				TextView micro = (TextView)rootView.findViewById(R.id.down_micro);
+				micro.setMovementMethod(LinkMovementMethod.getInstance());
+				String link_micro = "<a href='http://www.flipkart.com/microelectronic-circuits-theory-applications-with-cd-5/p/itmczytdpnuhxm6q'>Microelectronic Circuits by Sedra and Smith.</a>";
+				micro.setText(Html.fromHtml(link_micro));
+
+			}				
 			if(getArguments().getInt(ARG_SECTION_NUMBER)== 3){
 				//spoken tutorials
 				rootView = inflater.inflate(R.layout.spoken_tutorial,

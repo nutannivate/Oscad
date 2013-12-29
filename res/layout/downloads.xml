@@ -2,323 +2,350 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-     android:background="#15060b">
-     
- <LinearLayout 
-    android:layout_width="fill_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Installer"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:background="#302b31"
-        android:textColor="#d0ad85"
-        android:textSize="18sp" />
-    
-   <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" 
-        android:orientation="horizontal"
-		android:background="@drawable/shadow">
-		
-        <ImageView
-		    android:layout_width="50dip"
-            android:layout_height="wrap_content"
-		    android:src="@drawable/linux" />
-     
-       
-        <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent" 
-        android:orientation="vertical"
-		android:background="@drawable/shadow">
-		
-             <LinearLayout
-            android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="horizontal"  >
-		   		<TextView
-		        android:layout_width="200dp"
-		        android:layout_height="wrap_content"
-		        android:text="Ubuntu Linux"
-		     	android:layout_gravity="top"
-		     	android:layout_weight="0.5"
-		        android:padding="10dp"
-		        android:background="#302b31"
-		        android:textColor="#d0ad85"
-		        android:textSize="18sp"
-		         />
-		   		<Button
-		         android:id="@+id/window10"
-		         android:layout_width="wrap_content"
-		         android:layout_height="wrap_content"
-		         android:layout_gravity="right"
-		         android:text="Download "
-		         />
-	   		</LinearLayout>
-	   
-               <LinearLayout
-            android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="horizontal"  >
-		   <TextView
-		       android:layout_width="200dp"
-		       android:layout_height="wrap_content"
-		       android:layout_weight="0.5"
-		       android:background="#302b31"
-		       android:padding="10dp"
-		       android:text="Linux"
-		       android:textColor="#d0ad85"
-		       android:textSize="18sp" />
-		   
-		   <Button
-		         android:id="@+id/window15"
-		         android:layout_width="wrap_content"
-		         android:layout_height="wrap_content"
-		         android:layout_gravity="right"
-		         android:text="Download "
-		         />
-		   </LinearLayout>
-		  
-     </LinearLayout>
-     </LinearLayout>
+    android:background="#15060b">
      
  <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal" 
-		 >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Oscad Book e-version"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:background="#302b31"
-        android:textColor="#d0ad85"
-        android:textSize="18sp" 
-        android:layout_weight="0.5"/>
-    
-     <Button
-		         android:id="@+id/window5"
-		         android:layout_width="wrap_content"
-		         android:layout_height="wrap_content"
-		         android:layout_gravity="right"
-		         android:text="Download "
-		         />
-    </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="horizontal"
-        	android:background="@drawable/shadow"  >
-        
-		     <TextView
-		         android:layout_width="match_parent"
-		         android:layout_height="fill_parent"
-		         android:background="#15060b"
-		         android:paddingBottom="12dp"
-		         android:paddingLeft="20dp"
-		         android:paddingRight="20dp"
-		         android:paddingTop="10dp"
-		         android:text="The e-version of the book - Oscad: An open source EDA tool for circuit design, simulation, analysis and PCB design."
-		         android:textColor="#d0ad85"
-		         android:textSize="18dp" />
-     	
+     android:layout_width="fill_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical" >
+
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:background="@drawable/shadow"
+         android:padding="10dp"
+         android:text="Installer"
+         android:textColor="#302b31"
+         android:textSize="18sp"
+         android:textStyle="bold" />
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal" >
+
+         <ImageView
+             android:layout_width="60dip"
+             android:layout_height="wrap_content"
+             android:src="@drawable/linux"
+             android:paddingRight="10dip" 
+             android:paddingLeft="5dip" />
+
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="match_parent"
+             android:orientation="horizontal" >
+
+             <LinearLayout
+                 android:layout_width="fill_parent"
+                 android:layout_height="match_parent"
+                
+                 android:orientation="vertical" >
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="top"
+                     android:padding="5dp"
+                     android:text="Ubuntu Linux"
+                     android:textColor="#d0ad85"
+                     android:textSize="18sp" />
+
+                 <TextView
+                     android:id="@+id/down_linux"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="top"
+                     android:layout_weight="0.5"
+                     android:clickable="true"
+                     android:padding="5dp"
+                     android:textColor="#d0ad85"
+                     android:textSize="18sp" />
+             </LinearLayout>
+           
+         </LinearLayout>
+
      </LinearLayout>
-     
      <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal" 
-		 >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spoken Tutorials"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:background="#302b31"
-        android:textColor="#d0ad85"
-        android:textSize="18sp"
-        android:layout_weight="0.5" />
-    
-     <Button
-		         android:id="@+id/window4"
-		         android:layout_width="wrap_content"
-		         android:layout_height="wrap_content"
-		         android:layout_gravity="right"
-		         android:text="Download "
-		         />
-     
+        android:layout_height="3dp" 
+        android:background="#d0ad85" >
     </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="horizontal"
-        	android:background="@drawable/shadow"  >
-        
-		     <TextView
-		         android:layout_width="match_parent"
-		         android:layout_height="fill_parent"
-		         android:background="#15060b"
-		         android:paddingBottom="12dp"
-		         android:paddingLeft="20dp"
-		         android:paddingRight="20dp"
-		         android:paddingTop="10dp"
-		         android:text="Spoken Tutorials"
-		         android:textColor="#d0ad85"
-		         android:textSize="18dp" />
+	<LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal" >
 
-     	</LinearLayout>
-     	
-     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal" >
-    
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Oscad Examples"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:background="#302b31"
-        android:textColor="#d0ad85"
-        android:textSize="18sp"
-        android:layout_weight="0.5"
-         />
-    
-     <Button
-		         android:id="@+id/window3"
-		         android:layout_width="wrap_content"
-		         android:layout_height="wrap_content"
-		         android:layout_gravity="right"
-		         android:text="Download "
-		         />
-    </LinearLayout>
-     
-    
-        <LinearLayout
-            android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="horizontal"
-        	android:background="@drawable/shadow"  >
-        
-		     <TextView
-		         android:layout_width="fill_parent"
-		         android:layout_height="fill_parent"
-		         android:background="#15060b"
-		         android:paddingBottom="12dp"
-		         android:paddingLeft="20dp"
-		         android:paddingRight="20dp"
-		         android:paddingTop="10dp"
-		         android:text="Contains example projects and worked out examples from the book"
-		         android:textColor="#d0ad85"
-		         android:textSize="18dp" />
+         <ImageView
+             android:layout_width="60dip"
+             android:layout_height="100dip"
+             android:src="@drawable/windows"
+             android:paddingRight="10dip"
+             android:paddingLeft="5dip"   />
 
-     	</LinearLayout>
-     
-     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal" >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Errata for Oscad book"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:background="#302b31"
-        android:textColor="#d0ad85"
-        android:textSize="18sp"
-        android:layout_weight="0.5" />
-    
-    <Button
-		         android:id="@+id/window2"
-		         android:layout_width="wrap_content"
-		         android:layout_height="wrap_content"
-		         android:layout_gravity="right"
-		         android:text="Download " />
-    
-    </LinearLayout>
-    
-        <LinearLayout
-            android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="horizontal"
-        	android:background="@drawable/shadow"  >
-        
-		     <TextView
-		        android:layout_width="fill_parent"
-		        android:layout_height="fill_parent"
-		        android:textColor="#d0ad85"
-		        android:background="#15060b"
-		        android:textSize="18dp"
-		        android:paddingTop="10dp"
-		        android:paddingRight="20dp"
-		        android:paddingLeft="20dp"
-		        android:paddingBottom="12dp"
-		        android:text="Errata for the early printed versions of the Oscad book."
-		         />
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:orientation="horizontal" >
 
-     	</LinearLayout>
-     
-     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal" 
-		>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Oscad Companion CD"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:background="#302b31"
-        android:textColor="#d0ad85"
-        android:textSize="18sp"
-        android:layout_weight="0.5" />
-    
-    		<Button
-		         android:id="@+id/window1"
-		         android:layout_width="wrap_content"
-		         android:layout_height="wrap_content"
-		         android:layout_gravity="right"
-		         android:text="Download " />
-    
+             <LinearLayout
+                 android:layout_width="378dp"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical" >
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="top"
+                     android:padding="5dp"
+                     android:text="Windows XP"
+                     android:textColor="#d0ad85"
+                     android:textSize="18sp" />
+                 
+				<TextView
+				     android:id="@+id/down_oscad_IW"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="top"
+                     android:clickable="true"
+                     android:padding="5dp"
+                     android:textColor="#d0ad85"
+                     android:textSize="18sp" />
+				
+               
+           		<TextView
+           		     android:id="@+id/down_oscad_II"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="top"
+                     android:padding="5dp"
+                     android:clickable="true"
+                     android:textColor="#d0ad85"
+                     android:textSize="18sp" />
+				
+             </LinearLayout>
+
+                
+         </LinearLayout>
+
+        
      </LinearLayout>
-    
-        <LinearLayout
-            android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="horizontal" 
-        	android:background="@drawable/shadow">
-		     <TextView
-		        android:layout_width="wrap_content"
-		        android:layout_height="fill_parent"
-		        android:textColor="#d0ad85"
-		        android:background="#15060b"
-		        android:textSize="18dp"
-		        android:paddingTop="10dp"
-		        android:paddingRight="20dp"
-		        android:paddingLeft="20dp"
-		        android:paddingBottom="12dp"
-		        android:text="Contains all Oscad resources (items 1 - 5) mentioned above. Download the zip file, extract the contents and burn them on to a blank CD."
-		        />
-
-		     
-     
-     	</LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="3dp" 
+        android:background="#d0ad85" >
     </LinearLayout>
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="#15060b"
+         android:orientation="horizontal"
+         android:textColor="#302b31" >
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_weight="0.5"
+             android:background="@drawable/shadow"
+             android:paddingBottom="12dp"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="10dp"
+             android:text="Oscad Book e-version  (17.3 MB)"
+             android:textSize="18sp"
+             android:textStyle="bold" />
+
+         <Button
+             android:id="@+id/down_Ebook"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="right"
+             android:background="@drawable/shadow"
+             
+             
+             android:text="Download " />
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@drawable/shadow"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="fill_parent"
+             android:background="#15060b"
+             android:paddingBottom="12dp"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="10dp"
+             android:text="The e-version of the book - Oscad: An open source EDA tool for circuit design, simulation, analysis and PCB design."
+             android:textColor="#d0ad85"
+             android:textSize="18dp" />
+     </LinearLayout>
+
+ 
+  
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_weight="0.5"
+             android:background="@drawable/shadow"
+             android:paddingBottom="12dp"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="10dp"
+             android:text="Oscad Examples  (469 KB)"
+             android:textSize="18sp"
+             android:textStyle="bold" />
+
+         <Button
+             android:id="@+id/down_OE"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="right"
+             android:background="@drawable/shadow"
+             android:text="Download " />
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@drawable/shadow"
+         android:orientation="vertical" >
+
+         <TextView
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:background="#15060b"
+             android:paddingBottom="12dp"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="10dp"
+             android:text="Contains example projects and worked out examples from the book"
+             android:textColor="#d0ad85"
+             android:textSize="18dp" />
+         
+         <TextView
+             android:id="@+id/down_micro"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:layout_gravity="top"
+             android:layout_weight="0.40"
+             android:background="#15060b"
+             android:clickable="true"
+             android:paddingBottom="12dp"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="10dp"
+             android:textColor="#d0ad85"
+             android:textSize="18sp" />
+         
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_weight="0.5"
+             android:background="@drawable/shadow"
+             android:paddingBottom="12dp"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="10dp"
+             android:text="Errata for Oscad book  (42.8 KB)"
+             android:textSize="18sp"
+             android:textStyle="bold" />
+
+         <Button
+             android:id="@+id/down_EOB"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="right"
+             android:background="@drawable/shadow"
+             android:text="Download " />
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@drawable/shadow"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:background="#15060b"
+             android:paddingBottom="12dp"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="10dp"
+             android:text="Errata for the early printed versions of the Oscad book."
+             android:textColor="#d0ad85"
+             android:textSize="18dp" />
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_weight="0.5"
+             android:background="@drawable/shadow"
+             android:paddingBottom="12dp"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="10dp"
+             android:text="Oscad Companion CD  (270 MB)"
+             android:textSize="18sp"
+             android:textStyle="bold" />
+
+         <Button
+             android:id="@+id/down_OCCD"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="right"
+             android:background="@drawable/shadow"
+             android:text="Download " />
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@drawable/shadow"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="fill_parent"
+             android:background="#15060b"
+             android:paddingBottom="12dp"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="10dp"
+             android:text="Contains all Oscad resources (items 1 - 5) mentioned above. Download the zip file, extract the contents and burn them on to a blank CD."
+             android:textColor="#d0ad85"
+             android:textSize="18dp" />
+     </LinearLayout>
+ </LinearLayout>
+
 </ScrollView>
