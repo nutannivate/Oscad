@@ -204,215 +204,235 @@ public class MainActivity extends FragmentActivity implements
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			View rootView = null;
-			if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-				rootView = inflater.inflate(R.layout.home,
-						container, false);
-				TextView homecontentTextView = (TextView) rootView
-						.findViewById(R.id.intro);
-				homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-				SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.intro)));
-				Linkify.addLinks(s, Linkify.WEB_URLS);
-				homecontentTextView.setText(s);
-				
-				homecontentTextView = (TextView) rootView
-						.findViewById(R.id.features);
-				homecontentTextView.setText(Html.fromHtml(getString(R.string.features)));
-				
-				homecontentTextView = (TextView) rootView
-						.findViewById(R.id.books);
-				homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-				homecontentTextView.setText(Html.fromHtml(getString(R.string.books)));
-			}
-			if(getArguments().getInt(ARG_SECTION_NUMBER)== 2){
-				//spoken tutorials
-				rootView = inflater.inflate(R.layout.downloads,	container, false);
-				
-				
-				/***
-				 * Download oscad installer tar file for Linux
-				 */
-				TextView linux1 = (TextView)rootView.findViewById(R.id.down_linux);
-				linux1.setMovementMethod(LinkMovementMethod.getInstance());
-				String link_linux = "<a href='http://www.oscad.in/download/OSCAD_installer.tar.gz'>Oscad Installer - Linux</a>&nbsp;&nbsp;(6.2 MB)";
-				linux1.setText(Html.fromHtml(link_linux));
-
-				/***
-				 * Download oscad installer zip file for Windows
-				 */
-				TextView windows = (TextView)rootView.findViewById(R.id.down_oscad_IW);
-				windows.setMovementMethod(LinkMovementMethod.getInstance());
-				String text = "<a href='http://www.oscad.in/download/Oscad-windows-installer.zip'>Oscad Installer - Windows</a>&nbsp;&nbsp;(150 MB)";
-				windows.setText(Html.fromHtml(text));
-				
-				/***
-				 * Download oscad installation instrucion PDF file.
-				 */
-				TextView windowsInsta = (TextView)rootView.findViewById(R.id.down_oscad_II);
-				windowsInsta.setMovementMethod(LinkMovementMethod.getInstance());
-				String text1 = "<a href='http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf'>Oscad Installation Instructions for Windows</a>";
-				windowsInsta.setText(Html.fromHtml(text1));
-				
-				/***
-				 * Download oscad e-book pdf.
-				 */
-				Button windowInstuction = (Button)rootView.findViewById(R.id.down_Ebook);
-				windowInstuction.setOnClickListener(new OnClickListener() {
+			int arg_no = getArguments().getInt(ARG_SECTION_NUMBER);
+			switch (arg_no) {
+			case 1:
 					
-					@Override
-					public void onClick(View arg0) {
+						rootView = inflater.inflate(R.layout.home,container, false);
+						TextView homecontentTextView = (TextView) rootView.findViewById(R.id.intro);
+						homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+						SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.intro)));
+						Linkify.addLinks(s, Linkify.WEB_URLS);
+						homecontentTextView.setText(s);
 						
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/oscad.pdf")));
-					}
-				});
-				/***
-				 * Download oscad example .
-				 */
-				Button osExample = (Button)rootView.findViewById(R.id.down_OE);
-				osExample.setOnClickListener(new OnClickListener() {
-					
-					@Override
-					public void onClick(View arg0) {
+						homecontentTextView = (TextView) rootView.findViewById(R.id.features);
+						homecontentTextView.setText(Html.fromHtml(getString(R.string.features)));
 						
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/Examples.tar.gz")));
-					}
-				});
-				
-				
-				/***
-				 * Download oscad errata pdf .
-				 */
-				Button linuxSheet = (Button)rootView.findViewById(R.id.down_EOB);
-				linuxSheet.setOnClickListener(new OnClickListener() {
+						homecontentTextView = (TextView) rootView.findViewById(R.id.books);
+						homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+						homecontentTextView.setText(Html.fromHtml(getString(R.string.books)));
 					
-					@Override
-					public void onClick(View arg0) {
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/errata.pdf")));
-					}
-				});
-				
-				/***
-				 * Download Oscad Companion CD .
-				 */
-				Button linux = (Button)rootView.findViewById(R.id.down_OCCD);
-				linux.setOnClickListener(new OnClickListener() {
+				break;
+			case 2:
+					rootView = inflater.inflate(R.layout.downloads,	container, false);
+					/***
+					 * Download oscad installer tar file for Linux
+					 */
+					TextView linux1 = (TextView)rootView.findViewById(R.id.down_linux);
+					linux1.setMovementMethod(LinkMovementMethod.getInstance());
+					String link_linux = "<a href='http://www.oscad.in/download/OSCAD_installer.tar.gz'>Oscad Installer - Linux</a>&nbsp;&nbsp;(6.2 MB)";
+					linux1.setText(Html.fromHtml(link_linux));
+	
+					/***
+					 * Download oscad installer zip file for Windows
+					 */
+					TextView windows = (TextView)rootView.findViewById(R.id.down_oscad_IW);
+					windows.setMovementMethod(LinkMovementMethod.getInstance());
+					String text = "<a href='http://www.oscad.in/download/Oscad-windows-installer.zip'>Oscad Installer - Windows</a>&nbsp;&nbsp;(150 MB)";
+					windows.setText(Html.fromHtml(text));
 					
-					@Override
-					public void onClick(View arg0) {
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/download/Oscad.zip")));
-					}
-				});
-				
-				/***
-				 * It will intent to micro book page 
-				 */
-				TextView micro = (TextView)rootView.findViewById(R.id.down_micro);
-				micro.setMovementMethod(LinkMovementMethod.getInstance());
-				String link_micro = "<a href='http://www.flipkart.com/microelectronic-circuits-theory-applications-with-cd-5/p/itmczytdpnuhxm6q'>Microelectronic Circuits by Sedra and Smith.</a>";
-				micro.setText(Html.fromHtml(link_micro));
-
-			}				
-			if(getArguments().getInt(ARG_SECTION_NUMBER)== 3){
-				//download oscad installation scripts
-				rootView = inflater.inflate(R.layout.spoken_tutorial,
-						container, false);
-				Button windowInstuction = (Button)rootView.findViewById(R.id.windowInstruction);
-				//for windows
-				windowInstuction.setOnClickListener(new OnClickListener() {
+					/***
+					 * Download oscad installation instrucion PDF file.
+					 */
+					TextView windowsInsta = (TextView)rootView.findViewById(R.id.down_oscad_II);
+					windowsInsta.setMovementMethod(LinkMovementMethod.getInstance());
+					String text1 = "<a href='http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf'>Oscad Installation Instructions for Windows</a>";
+					windowsInsta.setText(Html.fromHtml(text1));
 					
-					@Override
-					public void onClick(View arg0) {
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf")));
-					}
-				});
-				
-				//for linux
-				Button linuxSheet = (Button)rootView.findViewById(R.id.linuxSheet);
-				linuxSheet.setOnClickListener(new OnClickListener() {
+					/***
+					 * Download oscad e-book pdf.
+					 */
+					Button EBook = (Button)rootView.findViewById(R.id.down_Ebook);
+					EBook.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View arg0) {
+							
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/oscad.pdf")));
+						}
+					});
+					/***
+					 * Download oscad example .
+					 */
+					Button osExample = (Button)rootView.findViewById(R.id.down_OE);
+					osExample.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View arg0) {
+							
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/Examples.tar.gz")));
+						}
+					});
 					
-					@Override
-					public void onClick(View arg0) {
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Linux.pdf")));
-					}
-				});
-				
-				//windows sheets
-				Button windowSheet = (Button)rootView.findViewById(R.id.windowSheet);
-				windowSheet.setOnClickListener(new OnClickListener() {
 					
-					@Override
-					public void onClick(View arg0) {
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Windows.pdf")));
+					/***
+					 * Download oscad errata pdf .
+					 */
+					Button errata = (Button)rootView.findViewById(R.id.down_EOB);
+					errata.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View arg0) {
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/errata.pdf")));
+						}
+					});
+					
+					/***
+					 * Download Oscad Companion CD .
+					 */
+					Button linux = (Button)rootView.findViewById(R.id.down_OCCD);
+					linux.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View arg0) {
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/download/Oscad.zip")));
+						}
+					});
+					
+					/***
+					 * It will intent to micro book page 
+					 */
+					TextView micro = (TextView)rootView.findViewById(R.id.down_micro);
+					micro.setMovementMethod(LinkMovementMethod.getInstance());
+					String link_micro = "<a href='http://www.flipkart.com/microelectronic-circuits-theory-applications-with-cd-5/p/itmczytdpnuhxm6q'>Microelectronic Circuits by Sedra and Smith.</a>";
+					micro.setText(Html.fromHtml(link_micro));
+				break;
+			case 3:
+			
+					//download oscad installation scripts
+					rootView = inflater.inflate(R.layout.spoken_tutorial,container, false);
+					Button windowInstuction = (Button)rootView.findViewById(R.id.windowInstruction);
+					//for windows
+					windowInstuction.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View arg0) {
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf")));
+						}
+					});
+					
+					//for linux
+					Button linuxSheet = (Button)rootView.findViewById(R.id.linuxSheet);
+					linuxSheet.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View arg0) {
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Linux.pdf")));
+						}
+					});
+					
+					//windows sheets
+					Button windowSheet = (Button)rootView.findViewById(R.id.windowSheet);
+					windowSheet.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View arg0) {
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Windows.pdf")));
+						}
+					});
+					
+					//expandable list activity to view or download spoken tutorials
+				    
+				    createGroupList();
+				    
+			        createCollection();
+			 
+			        expListView = (ExpandableListView) rootView.findViewById(R.id.expandableListView1);
+			        final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
+			                getActivity(), groupList, tutorials);
+			        expListView.setAdapter(expListAdapter);
+		        break;
+			case 4:
+					rootView = inflater.inflate(R.layout.contact,container, false);
+					
+					String[] contact_to = new String[]{"Textbook Companion : http://textbook-companion@oscad.in",
+							"Lab migration : http://lab-migration@oscad.in",
+							"SELF workshops : http://SELF-workshop@oscad.in",
+							"Oscad development and enhancing its capabilities : http://Oscad-dev@oscad.in",
+							"Feedback on Oscad book : http://Oscad-textbook@oscad.in"};
+					int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
+					
+					for (int i = 0; i < contact_to.length; i++) {
+						TextView contentTextView = (TextView) rootView.findViewById(ids[i]);
+						contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+						SpannableString string = new SpannableString(Html.fromHtml(contact_to[i]));
+						Linkify.addLinks(string, Linkify.WEB_URLS);
+						contentTextView.setText(string);
 					}
-				});
-				
-				//expandable list activity to view or download spoken tutorials
-			    
-			    createGroupList();
-			    
-		        createCollection();
-		 
-		        expListView = (ExpandableListView) rootView.findViewById(R.id.expandableListView1);
-		        final ExpandableListAdapter expListAdapter = new ExpandableListAdapter( getActivity(), groupList, tutorials);
-		        expListView.setAdapter(expListAdapter);
-			}			
-			if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
-				rootView = inflater.inflate(R.layout.contact,
-						container, false);
-				
-				String[] contact_to = new String[]{"Textbook Companion : http://textbook-companion@oscad.in",
-						"Lab migration : http://lab-migration@oscad.in",
-						"SELF workshops : http://SELF-workshop@oscad.in",
-						"Oscad development and enhancing its capabilities : http://Oscad-dev@oscad.in",
-						"Feedback on Oscad book : http://Oscad-textbook@oscad.in"};
-				int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
-				
-				for (int i = 0; i < contact_to.length; i++) {
-					TextView contentTextView = (TextView) rootView.findViewById(ids[i]);
-					contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-					SpannableString s = new SpannableString(Html.fromHtml(contact_to[i]));
-					Linkify.addLinks(s, Linkify.WEB_URLS);
-					contentTextView.setText(s);
-				}
-				
-			}
-			if (getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
-				//using contact layout for weblinks
-				rootView = inflater.inflate(R.layout.contact,
-						container, false);
-				
-				String[] weblinks = new String[]{"http://fossee.in/",
-						"http://scilab.in/",
-						"http://python.fossee.in/",
-						"http://cfd.fossee.in/",
-						"http://spoken-tutorial.org/"};
-				int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
-				
-				for (int i = 0; i < weblinks.length; i++) {
-					TextView contentTextView = (TextView) rootView.findViewById(ids[i]);
-					contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-					SpannableString s = new SpannableString(Html.fromHtml(weblinks[i]));
-					Linkify.addLinks(s, Linkify.WEB_URLS);
-					contentTextView.setText(s);
-				}
-			}
-			if (getArguments().getInt(ARG_SECTION_NUMBER) == 8) {
-				
+				break;
+			case 5:
+					rootView = inflater.inflate(R.layout.faqs,container, false);
+					
+					int list[]=new int[]{R.id.textView2,R.id.textView3,R.id.textView4,R.id.textView6,R.id.textView7,R.id.textView8};
+					
+					int list1[]=new int[]{R.string.FAQs,R.string.FAQs2,R.string.FAQs3,R.string.FAQs4,R.string.FAQs5,R.string.FAQs6};
+		
+					for (int i = 0; i < list.length; i++) {
+						TextView contentTextView = (TextView) rootView
+								.findViewById(list[i]);
+						contentTextView.setBackgroundColor(Color.parseColor("#15060b"));
+						contentTextView.setTextColor(Color.parseColor("#d0ad85"));
+						contentTextView.setText(Html.fromHtml(getString(list1[i])));
+		
+					}
+					
+					int list2[]=new int[]{R.id.textView1,R.id.textView5};
+					
+					for (int i = 0; i < list2.length; i++) {
+						TextView contentTextView1 = (TextView) rootView.findViewById(list2[i]);
+						contentTextView1.setBackgroundColor(Color.parseColor("#302b31"));
+						contentTextView1.setTextColor(Color.parseColor("#d0ad85"));
+					}
+					break;
+			case 6:
+					rootView = inflater.inflate(R.layout.contact,container, false);
+					
+					String[] weblinks = new String[]{"http://fossee.in/",
+							"http://scilab.in/",
+							"http://python.fossee.in/",
+							"http://cfd.fossee.in/",
+							"http://spoken-tutorial.org/"};
+					int[] id = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
+					
+					for (int i = 0; i < weblinks.length; i++) {
+						TextView contentTextView = (TextView) rootView.findViewById(id[i]);
+						contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+						SpannableString sContact = new SpannableString(Html.fromHtml(weblinks[i]));
+						Linkify.addLinks(sContact, Linkify.WEB_URLS);
+						contentTextView.setText(sContact);
+					}
+				break;
+			case 7:
+			
+				break;
+			
+			case 8:
 				rootView = inflater.inflate(R.layout.list,container, false);
 				
 				 String[] from = new String[] {"names_"};
 				 int[] to = new int[] {R.id.tvname};
-	        
+	       
 			     final List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();
 			     
 					final String names[] = new String[]{"Textbook Companion Project","Internship","Guidelines for Coding","Honorarium","Textbook Companion FAQ's","Completed Books","Download Codes"};
-
+	
 			        for (int i = 0; i < names.length; i++) {
 					     HashMap<String, String> map = new HashMap<String, String>();
 			        	 map.put("names_",names[i]);
 				         fillMaps.add( map);
-
+	
 			        }
-
+	
 			        SimpleAdapter adapter;
 			        adapter = new SimpleAdapter(getActivity().getApplicationContext(), fillMaps,
 		 				R.layout.text_book_companion, from, to);
@@ -421,7 +441,7 @@ public class MainActivity extends FragmentActivity implements
 			        lv.setAdapter(adapter);		
 			        
 			        lv.setOnItemClickListener(new OnItemClickListener() {
-
+	
 						@Override
 						public void onItemClick(AdapterView a, View v, int position, long id) {
 							
@@ -434,41 +454,17 @@ public class MainActivity extends FragmentActivity implements
 								intent.putExtra("flag",names[position]);
 								startActivity(intent);
 							}
-							
-							
 						}
 					});
-			        
+			      break;
+		
+			default:
+				break;
+		}
 
-		      
-			}if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
-				rootView = inflater.inflate(R.layout.faqs,
-						container, false);
-				
-				int list[]=new int[]{R.id.textView2,R.id.textView3,R.id.textView4,R.id.textView6,R.id.textView7,R.id.textView8};
-				
-				int list1[]=new int[]{R.string.FAQs,R.string.FAQs2,R.string.FAQs3,R.string.FAQs4,R.string.FAQs5,R.string.FAQs6};
-
-				for (int i = 0; i < list.length; i++) {
-					TextView contentTextView = (TextView) rootView
-							.findViewById(list[i]);
-					contentTextView.setBackgroundColor(Color.parseColor("#15060b"));
-					contentTextView.setTextColor(Color.parseColor("#d0ad85"));
-					contentTextView.setText(Html.fromHtml(getString(list1[i])));
-
-				}
-				
-				int list2[]=new int[]{R.id.textView1,R.id.textView5};
-				
-				for (int i = 0; i < list2.length; i++) {
-					TextView contentTextView1 = (TextView) rootView.findViewById(list2[i]);
-					contentTextView1.setBackgroundColor(Color.parseColor("#302b31"));
-					contentTextView1.setTextColor(Color.parseColor("#d0ad85"));
-				}
-			}
-			
 			return rootView;
 		}
+
 
 		private void createGroupList() {
         groupList = new ArrayList<String>();
