@@ -37,9 +37,12 @@
                     android:textColor="#d0ad85"
                     android:textSize="18sp" />
                 <LinearLayout 
+                     android:id="@+id/linear1"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
-                    android:background="#d0ad85"/>
+                    android:background="#d0ad85"
+                    android:orientation="vertical"
+                    />
                 
                 <TextView
                     android:id="@+id/contact2"
@@ -50,10 +53,13 @@
                     android:background="#302b31"
                     android:textColor="#d0ad85"
                     android:textSize="18sp" />
-                <LinearLayout 
+                <LinearLayout
+                    android:id="@+id/linear2"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
-                    android:background="#d0ad85"/>
+                    android:background="#d0ad85"
+                    />
                 
                 <TextView
                     android:id="@+id/contact3"
@@ -66,6 +72,8 @@
                     android:textSize="18sp" />
                 
                 <LinearLayout 
+                    android:id="@+id/linear3"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:background="#d0ad85"/>
@@ -80,7 +88,9 @@
                     android:textColor="#d0ad85"
                     android:textSize="18sp" />
                 
-                <LinearLayout 
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/linear4"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:background="#d0ad85"/>

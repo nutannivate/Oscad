@@ -101,4 +101,136 @@
           
       </string>
       
+      
+      
+ <string name="text_book">
+          
+          The Textbook Companion Project (TBC) aims to create Oscad project ﬁles for all the solved
+         
+          simulation exercises present in standard Electrical and Electronics Engineering textbooks.&lt;br /&gt;&lt;br /&gt;
+
+	   	  The objectives of this project are:
+          
+      </string>
+      
+      <string name="text_book2">
+          
+          	-  To make it easy for users of such textbooks to start using Oscad. &lt;br /&gt;
+
+  			-  To improve the documentation available for Oscad.
+      </string>
+      
+      <string name="text_book3">
+          
+		The Oscad Textbook Companion project is managed by the FOSSEE project,IIT Bombay.&lt;br /&gt;
+		Textbook Companion internship is an internship programme for college 
+		students who want to undertake an internship. The project will require a teacher as a mentor.
+		The mentor must have taught the specific subject for at least one year. The mentor will guide the student 
+		through the project and will be responsible for the intern\'s submissions.&lt;br /&gt;&lt;br /&gt;
+		
+		The procedure is as follows:
+ 		
+      </string>
+      
+      <string name="text_book4">
+          1. You should know or learn Oscad. Resources are provided at Oscad Resources. Learning Oscad is easy and 
+          if someone listens to and practices the Spoken Tutorials on Oscad, it can be learned in 2-3 days. For use of
+           any software package other than Oscad, contact us at textbookcompanion@oscad.in &lt;br /&gt;&lt;br /&gt;
+
+		   2. You should propose three books in the order of your preference, using the proposal 
+		   form available here. You have to create a new account and log in to access the proposal form. 
+		   You must ensure that the books you are proposing have not been been completed or undertaken under this project. 
+		   Click on Completed Books and Books in Progress to see the respective lists.&lt;br /&gt;
+
+			We will try to allot one of the three proposed books to you. Along with the book proposal, you are required to send a 
+			typical chapter\'s solved examples project file using Oscad from one of the three proposed books to textbook-companion@oscad.in in a .zip or 
+			.tgz file. We will not contact you to send the code. &lt;br /&gt;
+
+			It is suggested that you propose the book as early as possible,
+			 and not wait for the last date as your preferred book may be assigned to someone else. &lt;br /&gt; &lt;br /&gt;
+
+			3. You will be intimated about the approval or rejection of your proposal via email within 3 days. 
+			If you are selected, then your name along with the proposed textbook will appear under Books in Progress. &lt;br /&gt; &lt;br /&gt;
+
+			4. After final allotment, you will start creating schematics and perform simulation of 
+			only the solved simulation examples from the entire book. You are required to upload the project files on the interface.
+			 Also, send the code to your mentor. &lt;br /&gt; &lt;br /&gt;
+
+			Note: Lack of regularity on your part may force us to cancel your internship and the book will be assigned
+			 to another intern. Simultaneously, you should fill the IITB registration form and post it to us. All the
+			  required forms are available at Required Internship Forms. 	&lt;br /&gt; &lt;br /&gt;
+
+			5. The time-frame for completion of the book coding will be decided together by you, your mentor and us.&lt;br /&gt; &lt;br /&gt;
+
+			6. Review of the book - The review of the book will typically take approximately 10 days to finish. 
+			If any code is found to be not producing the desired result during review process, the student will have to recheck and resubmit all the 
+			codes.&lt;br /&gt; &lt;br /&gt;
+
+			7. Candidates who finish the report as per specified procedures will get an internship 
+			certificate: "Certified that the work completed is equivalent to six weeks of training under the supervision of the concerned faculty of IIT Bombay".&lt;br /&gt; &lt;br /&gt;
+
+			8. You will be awarded an honorarium of ₹ 150 per example and your mentor ₹ 100 per example 
+			for completing this work. &lt;br /&gt;
+          
+          
+      </string>
+      
+      
+      <string name="guideline">
+          
+            1. Avoid spaces in project names. &lt;br /&gt;&lt;br /&gt;
+			2. Project name should be same as the example number.(e.g example_2.3) &lt;br /&gt;&lt;br /&gt;
+			3. Give the respective names and values to the elements as given in the book. &lt;br /&gt;&lt;br /&gt;
+			4. Put the plot option at the inputs and outputs. &lt;br /&gt;&lt;br /&gt;
+			5. Use the proper model of the devices as mentioned in the book, if you are unable to find models of device then contact us at textbook-companion@oscad.in. &lt;br /&gt;&lt;br /&gt;
+			6. Once you have completed the project, mail us at textbook-companion@oscad.in with complete details including your name and allotted book. &lt;br /&gt;
+          
+      </string>
+      <string name="Honorarium">
+          
+          			Please note the following important honorarium details:
+          
+      </string>
+      <string name="Honorarium1" formatted="false">
+          
+			1. After submission of ALL the projects, the review is to be requested by the student. 
+			If ALL the solutions for the solved examples from the proposed book are found to be working satisfactorily at 
+			the time of FIRST review, the student and the mentor will get a bonus amount of ₹ 2,000/- and ₹ 1,000/- respectively, 
+			in addition to the honorarium of the sum ₹ 150 per examples and ₹ 100 per examples. &lt;br /&gt;&lt;br /&gt;
+			
+			2. If more than 5% codes are found to be erroneous during the FIRST review, the honorarium shall be cut to 30% of the 
+			original amount, for the mentor and 20% of the original amount , for the student. The student will be asked to submit 
+			ALL the codes again after making the necessary corrections. &lt;br /&gt;&lt;br /&gt;
+			
+			3. If ANY code is found to be erroneous after the SECOND review, the student shall not receive any amount as honorarium.
+			 The proposed book and the uploaded codes shall be deleted from the Textbook Companion database. &lt;br /&gt;
+      </string>
+      
+      <string name="Honorarium2">
+          
+          	 <![CDATA[<b>Note:</b>]]>&lt;br /&gt;
+			On submission of a Textbook Companion, the review process involves several checks including but not limited to:
+      </string>
+      
+        <string name="Honorarium3">
+           	  1. Completeness of the project. &lt;br /&gt;&lt;br /&gt;
+				2. Completeness of the book - missing parts (or) sections. &lt;br /&gt;&lt;br /&gt;
+				3. Plagiarism. &lt;br /&gt;&lt;br /&gt;
+				4. ERC and DRC checks.
+      </string>
+      
+        
+        <string name="Honorarium4" >
+            
+            In this regard, we are forced to test EVERY code of EVERY participant thoroughly. Due to many participants, this 
+            verification process takes considerable amount of time. Moreover, dispatch of Government money requires approvals 
+            from the Dean\'s Office, Accounts Office, etc. which also takes some time. &lt;br /&gt;&lt;br /&gt;
+
+			Due to the above listed reasons, immediate acceptance of a Textbook Companion and processing of payment is highly impossible.
+			 The participants are therefore requested to show some patience. However, if you do not get your money within 
+			 45 days after submitting working code, please get in touch with us - we shall be happy to assist you. 
+			 If there are problems with the submitted code, naturally, there will be further delays.&lt;br /&gt;&lt;br /&gt;
+        </string>
+   
+        
 </resources>

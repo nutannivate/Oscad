@@ -352,8 +352,7 @@ public class MainActivity extends FragmentActivity implements
 		        createCollection();
 		 
 		        expListView = (ExpandableListView) rootView.findViewById(R.id.expandableListView1);
-		        final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
-		                getActivity(), groupList, tutorials);
+		        final ExpandableListAdapter expListAdapter = new ExpandableListAdapter( getActivity(), groupList, tutorials);
 		        expListView.setAdapter(expListAdapter);
 			}			
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
@@ -405,7 +404,7 @@ public class MainActivity extends FragmentActivity implements
 	        
 			     final List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();
 			     
-					String names[] = new String[]{"Textbook Companion Project","Internship","Guidelines for Coding","Honorarium","Textbook Companion FAQ's","Completed Books","Download Codes"};
+					final String names[] = new String[]{"Textbook Companion Project","Internship","Guidelines for Coding","Honorarium","Textbook Companion FAQ's","Completed Books","Download Codes"};
 
 			        for (int i = 0; i < names.length; i++) {
 					     HashMap<String, String> map = new HashMap<String, String>();
@@ -418,13 +417,24 @@ public class MainActivity extends FragmentActivity implements
 			        adapter = new SimpleAdapter(getActivity().getApplicationContext(), fillMaps,
 		 				R.layout.text_book_companion, from, to);
 				
-			        ListView lv = (ListView) rootView.findViewById( R.id.listView1 );
+			        final ListView lv = (ListView) rootView.findViewById( R.id.listView1 );
 			        lv.setAdapter(adapter);		
 			        
 			        lv.setOnItemClickListener(new OnItemClickListener() {
 
 						@Override
 						public void onItemClick(AdapterView a, View v, int position, long id) {
+							
+							if(position==5){
+								Intent intent= new Intent(getActivity(), completed_books.class);
+								intent.putExtra("flag",names[position]);
+								startActivity(intent);
+							}else {
+								Intent intent= new Intent(getActivity(), information.class);
+								intent.putExtra("flag",names[position]);
+								startActivity(intent);
+							}
+							
 							
 						}
 					});

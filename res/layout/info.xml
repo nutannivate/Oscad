@@ -1,7 +1,14 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+     android:background="#15060b">
+
+
+<LinearLayout 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="#15060b">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="3dp" 
@@ -10,7 +17,7 @@
     </LinearLayout>
     
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="31dp"
  
@@ -20,5 +27,90 @@
         android:textColor="#d0ad85"
         android:background="#302b31"
         android:textStyle="bold"/>
+    
+    <TextView
+        android:id="@+id/text_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="18dp"
+        android:background="#15060b"
+        android:textColor="#d0ad85"
+        
+        />
+     <LinearLayout
+         android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+		android:background="@drawable/shadow"        >
 
+    
+       
+       <TextView
+        android:id="@+id/text_book1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:background="#15060b"
+        android:textColor="#d0ad85"
+     
+        />
+    </LinearLayout>
+<TextView
+        android:id="@+id/text_book2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="18dp"
+        android:background="#15060b"
+        android:textColor="#d0ad85"
+        
+        />
+		<LinearLayout
+         android:id="@+id/linear_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+		android:background="@drawable/shadow"        >
+
+    
+       
+       <TextView
+        android:id="@+id/text_book3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:background="#15060b"
+        android:textColor="#d0ad85"
+     
+        />
+    </LinearLayout>
+    
+		<TextView
+        android:id="@+id/text_book4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="18dp"
+        android:background="#15060b"
+        android:textColor="#d0ad85"
+        
+        />
 </LinearLayout>
+</ScrollView>
