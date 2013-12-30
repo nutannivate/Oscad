@@ -1,7 +1,7 @@
 An android application for Oscad website
 ----------------------------------------
 
-Refer to `Oscad<http://www.oscad.in/>`_ website for details.
+Refer to `Oscad <http://www.oscad.in/>`_ website for details.
 This app is compatible with all android devices with minimum API level 11.
 
 License
