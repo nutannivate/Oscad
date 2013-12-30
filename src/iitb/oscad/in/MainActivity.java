@@ -312,19 +312,20 @@ public class MainActivity extends FragmentActivity implements
 
 			}				
 			if(getArguments().getInt(ARG_SECTION_NUMBER)== 3){
-				//spoken tutorials
+				//download oscad installation scripts
 				rootView = inflater.inflate(R.layout.spoken_tutorial,
 						container, false);
 				Button windowInstuction = (Button)rootView.findViewById(R.id.windowInstruction);
+				//for windows
 				windowInstuction.setOnClickListener(new OnClickListener() {
 					
 					@Override
 					public void onClick(View arg0) {
-						//Toast.makeText(getActivity(), "hi", Toast.LENGTH_SHORT).show();
 						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf")));
 					}
 				});
 				
+				//for linux
 				Button linuxSheet = (Button)rootView.findViewById(R.id.linuxSheet);
 				linuxSheet.setOnClickListener(new OnClickListener() {
 					
@@ -334,6 +335,7 @@ public class MainActivity extends FragmentActivity implements
 					}
 				});
 				
+				//windows sheets
 				Button windowSheet = (Button)rootView.findViewById(R.id.windowSheet);
 				windowSheet.setOnClickListener(new OnClickListener() {
 					
@@ -343,7 +345,7 @@ public class MainActivity extends FragmentActivity implements
 					}
 				});
 				
-				//expandable list activity
+				//expandable list activity to view or download spoken tutorials
 			    
 			    createGroupList();
 			    

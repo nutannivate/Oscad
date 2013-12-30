@@ -58,6 +58,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 		TextView item = (TextView) convertView.findViewById(R.id.tutorial);
 		final PackageManager pm = context.getPackageManager();
 		
+		/*
+		 * download spoken tutorial videos
+		 */
 		Button download = (Button) convertView.findViewById(R.id.download);
 		download.setOnClickListener(new OnClickListener() {
 
@@ -68,14 +71,19 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 				builder.setPositiveButton("Yes",
 						new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
-							String url = getVideoLink(groupPosition, childPosition);
-							Intent intent_browser = new Intent(Intent.ACTION_VIEW);
-							intent_browser.setClassName("com.android.browser", "com.android.browser.BrowserActivity");
-							intent_browser.setData(Uri.parse(url));
-							context.startActivity(intent_browser);
-//							List<String> child = tutorials.get(foss.get(groupPosition));
-//	                        child.remove(childPosition);
-//	                        notifyDataSetChanged();
+						// get the videos url depending upon which child row clicked
+						String url = getVideoLink(groupPosition, childPosition);
+						
+						//intent to android's default browser
+						Intent intent_browser = new Intent(Intent.ACTION_VIEW);
+						intent_browser.setClassName("com.android.browser", "com.android.browser.BrowserActivity");
+						intent_browser.setData(Uri.parse(url));
+						context.startActivity(intent_browser);
+						
+						//use below code for deleting child row (using are not using this code in this app)
+//						List<String> child = tutorials.get(foss.get(groupPosition));
+//	                    child.remove(childPosition);
+//	                    notifyDataSetChanged();
 					}
 
 					
@@ -91,6 +99,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 			}
 		});
 
+		/*
+		 * View spoken tutorial videos on firefox browser
+		 */
 		Button view = (Button) convertView.findViewById(R.id.view);
 		view.setOnClickListener(new OnClickListener() {
 
@@ -101,7 +112,10 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 				builder.setPositiveButton("Yes",
 						new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
+						// get the videos url depending upon which child row clicked
 						String url = getVideoLink(groupPosition, childPosition);
+						
+						//intent to firefox browser, if not installed redirect to google play.
 						try {
 							pm.getPackageInfo("org.mozilla.firefox", PackageManager.GET_ACTIVITIES);
 							Intent intent_browser = new Intent(Intent.ACTION_VIEW);
