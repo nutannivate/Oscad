@@ -7,8 +7,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -296,21 +298,6 @@ public class MainActivity extends FragmentActivity implements
 		        final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
 		                getActivity(), groupList, tutorials);
 		        expListView.setAdapter(expListAdapter);
-		 
-		        //setGroupIndicatorToRight();
-		 
-		        expListView.setOnChildClickListener(new OnChildClickListener() {
-		 
-		            public boolean onChildClick(ExpandableListView parent, View v,
-		                    int groupPosition, int childPosition, long id) {
-		                final String selected = (String) expListAdapter.getChild(
-		                        groupPosition, childPosition);
-		                Toast.makeText(getActivity().getBaseContext(), selected, Toast.LENGTH_LONG)
-		                        .show();
-		 
-		                return true;
-		            }
-		        });
 			}			
 			if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
 				rootView = inflater.inflate(R.layout.contact,
@@ -454,16 +441,6 @@ public class MainActivity extends FragmentActivity implements
             childList.add(model);
     }
  
-    private void setGroupIndicatorToRight() {
-        /* Get the screen width */
-        DisplayMetrics dm = new DisplayMetrics();
-        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width = dm.widthPixels;
- 
-        expListView.setIndicatorBounds(width - getDipsFromPixel(35), width
-                - getDipsFromPixel(5));
-    }
- 
     // Convert pixel to dip
     public int getDipsFromPixel(float pixels) {
         // Get the screen's density scale
@@ -474,4 +451,28 @@ public class MainActivity extends FragmentActivity implements
 
 		}
 	
+	@Override
+	public void onBackPressed() {
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Are you sure you want to exit?")
+		.setCancelable(false)
+		.setPositiveButton("Yes",
+				new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				finish();
+				android.os.Process
+				.killProcess(android.os.Process.myPid());
+
+			}
+		})
+		.setNegativeButton("No", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				dialog.cancel();
+			}
+		});
+		AlertDialog alert = builder.create();
+		alert.show();
+
+	}
 }
