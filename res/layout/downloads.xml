@@ -7,7 +7,9 @@
  <LinearLayout
      android:layout_width="fill_parent"
      android:layout_height="match_parent"
-     android:orientation="vertical" >
+     android:orientation="vertical"
+     android:layout_marginRight="5dip"
+      >
 
      <TextView
          android:layout_width="match_parent"
@@ -16,7 +18,7 @@
          android:background="@drawable/shadow"
          android:padding="10dp"
          android:text="Installer"
-         android:textColor="#302b31"
+         android:textColor="#15060b"
          android:textSize="18sp"
          android:textStyle="bold" />
 
@@ -134,14 +136,15 @@
      <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="3dp" 
-        android:background="#d0ad85" >
+        android:background="#d0ad85"
+         >
     </LinearLayout>
      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
          android:background="#15060b"
          android:orientation="horizontal"
-         android:textColor="#302b31" >
+          >
 
          <TextView
              android:layout_width="match_parent"
@@ -153,6 +156,7 @@
              android:paddingLeft="20dp"
              android:paddingRight="20dp"
              android:paddingTop="10dp"
+             android:textColor="#15060b"
              android:text="Oscad Book e-version  (17.3 MB)"
              android:textSize="18sp"
              android:textStyle="bold" />
@@ -163,9 +167,9 @@
              android:layout_height="wrap_content"
              android:layout_gravity="right"
              android:background="@drawable/shadow"
-             
-             
-             android:text="Download " />
+             android:text="Download " 
+             android:textColor="#15060b"
+             android:textStyle="bold"/>
      </LinearLayout>
 
      <LinearLayout
@@ -193,7 +197,9 @@
      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:orientation="horizontal" >
+         android:orientation="horizontal"
+         
+         >
 
          <TextView
              android:layout_width="match_parent"
@@ -207,6 +213,7 @@
              android:paddingTop="10dp"
              android:text="Oscad Examples  (469 KB)"
              android:textSize="18sp"
+             android:textColor="#15060b"
              android:textStyle="bold" />
 
          <Button
@@ -215,7 +222,9 @@
              android:layout_height="wrap_content"
              android:layout_gravity="right"
              android:background="@drawable/shadow"
-             android:text="Download " />
+             android:text="Download "
+             android:textColor="#15060b"
+             android:textStyle="bold" />
      </LinearLayout>
 
      <LinearLayout
@@ -228,7 +237,7 @@
              android:layout_width="fill_parent"
              android:layout_height="fill_parent"
              android:background="#15060b"
-             android:paddingBottom="12dp"
+             android:paddingBottom="5dp"
              android:paddingLeft="20dp"
              android:paddingRight="20dp"
              android:paddingTop="10dp"
@@ -256,7 +265,8 @@
      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:orientation="horizontal" >
+         android:orientation="horizontal"
+          >
 
          <TextView
              android:layout_width="match_parent"
@@ -270,6 +280,7 @@
              android:paddingTop="10dp"
              android:text="Errata for Oscad book  (42.8 KB)"
              android:textSize="18sp"
+             android:textColor="#15060b"
              android:textStyle="bold" />
 
          <Button
@@ -278,6 +289,8 @@
              android:layout_height="wrap_content"
              android:layout_gravity="right"
              android:background="@drawable/shadow"
+             android:textColor="#15060b"
+             android:textStyle="bold"
              android:text="Download " />
      </LinearLayout>
 
@@ -303,7 +316,8 @@
      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:orientation="horizontal" >
+         android:orientation="horizontal"
+           >
 
          <TextView
              android:layout_width="match_parent"
@@ -317,7 +331,8 @@
              android:paddingTop="10dp"
              android:text="Oscad Companion CD  (270 MB)"
              android:textSize="18sp"
-             android:textStyle="bold" />
+             android:textStyle="bold"
+              android:textColor="#15060b" />
 
          <Button
              android:id="@+id/down_OCCD"
@@ -325,6 +340,8 @@
              android:layout_height="wrap_content"
              android:layout_gravity="right"
              android:background="@drawable/shadow"
+             android:textColor="#15060b"
+             android:textStyle="bold"
              android:text="Download " />
      </LinearLayout>
 
