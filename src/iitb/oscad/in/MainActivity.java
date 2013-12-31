@@ -35,6 +35,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -61,6 +62,7 @@ ActionBar.TabListener {
 	static List<String> childList;
 	static Map<String, List<String>> tutorials;
 	static ExpandableListView expListView;
+	static AlertDialog dialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -342,8 +344,9 @@ ActionBar.TabListener {
 				});
 
 				//expandable list activity to view or download spoken tutorials
-
-				createGroupList();
+				information.display_exp_list = false;
+				String[] foss_list = new String[]{"Oscad","KiCad","Ngspice"};
+				createGroupList(foss_list);
 
 				createCollection();
 
@@ -355,19 +358,17 @@ ActionBar.TabListener {
 			case 4:
 				rootView = inflater.inflate(R.layout.contact,container, false);
 
-				String[] contact_to = new String[]{"Textbook Companion : http://textbook-companion@oscad.in",
-						"Lab migration : http://lab-migration@oscad.in",
-						"SELF workshops : http://SELF-workshop@oscad.in",
-						"Oscad development and enhancing its capabilities : http://Oscad-dev@oscad.in",
-				"Feedback on Oscad book : http://Oscad-textbook@oscad.in"};
+				String[] contact_to = new String[]{"Textbook Companion : <a href='mailto:textbook-companion@oscad.in'>textbook-companion@oscad.in</a> ",
+						"Lab migration : <a href='mailto:lab-migration@oscad.in'>lab-migration@oscad.in</a>",
+						"SELF workshops : <a href='mailto:SELF-workshop@oscad.in'>SELF-workshop@oscad.in</a>",
+						"Oscad development and enhancing its capabilities : <a href='mailto:Oscad-dev@oscad.in'>Oscad-dev@oscad.in</a>",
+				"Feedback on Oscad book : <a href='mailto:Oscad-textbook@oscad.in'>Oscad-textbook@oscad.in</a>"};
 				int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
 
 				for (int i = 0; i < contact_to.length; i++) {
 					TextView contentTextView = (TextView) rootView.findViewById(ids[i]);
 					contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-					SpannableString string = new SpannableString(Html.fromHtml(contact_to[i]));
-					Linkify.addLinks(string, Linkify.WEB_URLS);
-					contentTextView.setText(string);
+					contentTextView.setText(Html.fromHtml(contact_to[i]));
 				}
 				break;
 			case 5:
@@ -445,7 +446,48 @@ ActionBar.TabListener {
 					@Override
 					public void onItemClick(AdapterView a, View v, int position, long id) {
 
-						if(position==6){
+						if(position==4){
+							LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
+							View layout = inflater.inflate(R.layout.contact, null);
+							//Building DatepPcker dialog
+							AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+							builder.setView(layout);
+							TextView title = (TextView)layout.findViewById(R.id.option_title);
+							title.setVisibility(View.VISIBLE);
+							
+							final String[] categories = new String[]{"Queries regarding Textbook companion",
+									"Queries regarding book proposal & coding",
+									"Queries regarding Internship forms and honorarium"};
+							int[] text_id = new int[]{R.id.contact1,R.id.contact2,R.id.contact3};
+
+							TextView contact4 = (TextView)layout.findViewById(R.id.contact4);
+							contact4.setVisibility(View.GONE);
+							contact4 = (TextView)layout.findViewById(R.id.contact5);
+							contact4.setVisibility(View.GONE);
+							LinearLayout ll = (LinearLayout)layout.findViewById(R.id.linear3);
+							ll.setVisibility(View.GONE);
+							for (int i = 0; i < categories.length; i++) {
+								TextView contentTextView = (TextView) layout.findViewById(text_id[i]);
+								contentTextView.setText(categories[i]);
+								final String option = categories[i];
+								contentTextView.setOnClickListener(new OnClickListener() {
+									
+									@Override
+									public void onClick(View v) {
+										dialog.dismiss();
+										//Toast.makeText(getActivity(), option, Toast.LENGTH_LONG).show();
+										Intent intent= new Intent(getActivity(), information.class);
+										intent.putExtra("flag","Textbook Companion FAQ's");
+										intent.putExtra("option",option);
+										startActivity(intent);
+										
+									}
+								});
+							}
+							
+							dialog=builder.create();
+				    		dialog.show();
+						}else if(position==6){
 							String url = "http://oscad.in/textbook_run";
 							Intent i = new Intent(Intent.ACTION_VIEW);
 							i.setData(Uri.parse(url));
@@ -541,14 +583,14 @@ ActionBar.TabListener {
 		}
 
 
-		private void createGroupList() {
+		public static void createGroupList(String[] list) {
 			groupList = new ArrayList<String>();
-			groupList.add("Oscad");
-			groupList.add("KiCad");
-			groupList.add("Ngspice");
+			for (int i = 0; i < list.length; i++) {
+				groupList.add(list[i]);
+			}
 		}
 
-		private void createCollection() {
+		public static void createCollection() {
 			// preparing FOSS tutorials(child)
 			String[] oscadTutorials = { "1. Introduction to Oscad", "2. Schematic Creation and Simulation using Oscad",
 			"3. Designing PCB using Oscad" };
@@ -573,18 +615,20 @@ ActionBar.TabListener {
 			}
 		}
 
-		private void loadChild(String[] fossTutorials) {
+		public static void loadChild(String[] fossTutorials) {
 			childList = new ArrayList<String>();
 			for (String model : fossTutorials)
 				childList.add(model);
 		}
 
-		// Convert pixel to dip
-		public int getDipsFromPixel(float pixels) {
-			// Get the screen's density scale
-			final float scale = getResources().getDisplayMetrics().density;
-			// Convert the dps to pixels, based on density scale
-			return (int) (pixels * scale + 0.5f);
+		public static void createQuestionCollection(String[] array) {
+			tutorials = new LinkedHashMap<String, List<String>>();
+
+			for (int i = 0; i < groupList.size(); i++) {
+				childList = new ArrayList<String>();
+				childList.add(Html.fromHtml(array[i]).toString());
+				tutorials.put(groupList.get(i), childList);
+			}
 		}
 
 	}

@@ -21,6 +21,17 @@
 	            android:background="#15060b"
 	            android:layout_margin="10dp"
 	            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/option_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select option"
+                android:layout_gravity="center"
+                android:textColor="#d0ad85"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:visibility="gone" />
 	            
             	<LinearLayout 
                     android:layout_width="match_parent"

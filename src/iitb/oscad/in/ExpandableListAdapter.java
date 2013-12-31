@@ -62,6 +62,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 		 * download spoken tutorial videos
 		 */
 		Button download = (Button) convertView.findViewById(R.id.download);
+		if (information.display_exp_list) {
+			download.setVisibility(View.GONE);
+		}
 		download.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
@@ -103,6 +106,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 		 * View spoken tutorial videos on firefox browser
 		 */
 		Button view = (Button) convertView.findViewById(R.id.view);
+		if (information.display_exp_list) {
+			view.setVisibility(View.GONE);
+		}
 		view.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {

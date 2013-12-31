@@ -1,5 +1,6 @@
 package iitb.oscad.in;
 
+import iitb.oscad.in.MainActivity.DummySectionFragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -8,7 +9,12 @@ import android.text.Html;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class information extends Activity{
@@ -16,18 +22,16 @@ public class information extends Activity{
 	String subitem;
 	TextView text_book ,text_book1,text_book2,text_book3,text_book4;
 	LinearLayout LinearLayout;
+	static boolean display_exp_list;
+	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		Bundle extras = getIntent().getExtras();
 		if (extras == null) {
-			System.out.println("no info"); 
 
 		} else {
-
 			subitem = extras.getString("flag");
-			System.out.println("info:" + subitem);
-
 		}
 
 		if("Completed Books".equals(subitem)){
@@ -55,6 +59,37 @@ public class information extends Activity{
 				contentTextView.setText(s);
 			}
 
+		}else if("Textbook Companion FAQ's".equals(subitem)){
+			setContentView(R.layout.spoken_tutorial);
+			ScrollView scrollView = (ScrollView)findViewById(R.id.scrollview);
+			scrollView.setVisibility(View.GONE);
+			
+			String selected_option = extras.getString("option");
+			
+			TextView title = (TextView)findViewById(R.id.title);
+			title.setText(selected_option);
+			title.setGravity(Gravity.CENTER_HORIZONTAL);
+			
+			display_exp_list = true;
+			
+			//expandable list activity to display questions and answers
+			if (selected_option.equalsIgnoreCase("Queries regarding Textbook companion")) {
+				DummySectionFragment.createGroupList(getResources().getStringArray(R.array.questions_array1));
+				DummySectionFragment.createQuestionCollection(getResources().getStringArray(R.array.answers_array1));
+			}else if (selected_option.equalsIgnoreCase("Queries regarding book proposal & coding")) {
+				DummySectionFragment.createGroupList(getResources().getStringArray(R.array.questions_array2));
+				DummySectionFragment.createQuestionCollection(getResources().getStringArray(R.array.answers_array2));
+			}else if (selected_option.equalsIgnoreCase("Queries regarding Internship forms and honorarium")) {
+				DummySectionFragment.createGroupList(getResources().getStringArray(R.array.questions_array3));
+				DummySectionFragment.createQuestionCollection(getResources().getStringArray(R.array.answers_array3));
+			}
+			
+
+			ExpandableListView expListView = (ExpandableListView)findViewById(R.id.expandableListView1);
+			final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
+					this, MainActivity.groupList, MainActivity.tutorials);
+			expListView.setAdapter(expListAdapter);
+			
 		}else {
 			setContentView(R.layout.info);
 

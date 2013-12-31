@@ -203,6 +203,8 @@
 			 If there are problems with the submitted code, naturally, there will be further delays.&lt;br /&gt;&lt;br /&gt;
     </string>
    
+   	<string name="faqs"></string>
+     
     <string name="lab_migration1">
 	    Lab Migration aims to migrate labs that use proprietary software (e.g. OrCAD, PSpice) to a Free 
 	    and Open Source Software (FOSS) only lab. We recommend the use of Oscad as it offers the same 
@@ -219,7 +221,7 @@
     </string>
     <string name="lab_migration3">
         Learn how to submit a proposal here ­ <![CDATA[<a href="http://oscad.in/lab_migration/proposal">http://oscad.in/lab_migration/proposal</a>]]>. &lt;br /&gt;&lt;br /&gt;
-        We can also be reached directly at <![CDATA[<a href="http://labmigration@oscad.in/">http://labmigration@oscad.in</a>]]>.&lt;br /&gt;
+        We can also be reached directly at labmigration@oscad.in.&lt;br /&gt;
     </string>
     <string name="lab_migration4">
         Teachers/Professors/Students from educational institutions across the country can participate in the Lab Migration project. 
@@ -287,4 +289,169 @@
     		The faculty can also submit the solutions to the lab exercises.&lt;br /&gt;&lt;br /&gt;
     	- Rs.1000/- for the Principal of the college.
      </string>
+    <string-array name="questions_array1">
+        <item>1. What is Textbook Companion?</item>
+        <item>2. Which book can I choose?</item>
+        <item>3. What is the minimum number of examples a book should have?</item>
+        <item>4. Who is eligible for internship?</item>
+        <item>5. What are the prerequisites for applying for the internship?</item>
+        <item>6. What is the deadline for the internship?</item>
+        <item>7. Can the internship be cancelled if it is allotted to me? Has it ever been cancelled for anybody?</item>
+        <item>8. What is the role of the teacher?</item>
+        <item>9. Is it necessary to have a mentor?</item>
+        <item>10. Does my teacher have to formally inform her/his HoD?</item>
+        <item>11. Can the same teacher mentor more than one student?</item>
+        <item>12. Can more than one student work on the same book?</item>
+        <item>13. Is it necessary to come to IIT Bombay for completing the internship?</item>
+    </string-array>
+    <string-array name="answers_array1">
+        <item>The Textbook Companion aims to generate an online collection of Oscad 
+            based circuit simulations for worked out examples and select 
+            exercise problems from standard textbooks.</item>
+        <item>Any book containing solved circuit analysis and circuit simulation examples 
+            can be chosen for creating TBC. However, the applicant has to ensure that the 
+            proposed book has not already been completed or is being completed currently by 
+            any other intern. The list of completed books and books in progress is available 
+            on the website. In case the book has already been completed or is being worked 
+            upon by another intern, then the book proposal will be rejected. Also note that 
+            the responsibility of ensuring such a scenario does not arise bears with the intern 
+            and/or his teacher as per the undertaking form.</item>
+       	<item>The book can have any number of examples and payment is based on per example basis. 
+       	    Please note that you should complete all the examples in the chosen book.</item>
+       	<item>Students pursuing graduation from various colleges are eligible for this internship. 
+       	    Please note that the internship will also involve a teacher of the student 
+       	    (from the same college) who has taught the subject for at least one or two years. 
+       	    The teacher is expected to guide the student through the internship and will be 
+       	    responsible for the student\'s submissions.</item>
+       	<item>There are no prerequisites for applying for the internship. 
+       	    The student should be comfortable with Oscad software environment. 
+       	    Spoken Tutorials are available for self-­learning of Oscad software. 
+       	    Please visit: http://www.oscad.in/resources/tutorials</item>
+       	<item>The internship should be completed within 3 months after proposing the book. 
+       	    The simulation exercises can be uploaded in multiple groups (e.g. chapter wise) 
+       	    before the deadline. Applicants may contact us at textbook[at]oscad[dot]in, 
+       	    if the deadline needs to be changed. Please note that the extension of the 
+       	    deadline for the completion of the internship will be considered only in case of 
+       	    genuine reasons.</item>
+       	<item>Yes. Refusal to meet the deadline, poor performance and badgering the 
+       	    Oscad team are some of the reasons as to why the internship could be cancelled. 
+       	    No partial payment will be made in such a case.</item>
+       	<item>The teacher is expected to guide the intern during the internship and will bear 
+       	    the responsibility for the student\'s submissions and undertakings.</item>
+       	<item>Yes. It is necessary to have a mentor. However, if you are do not have a mentor 
+       	    in such cases, please inform us by e-mail textbook-companion@oscad.in.
+			Please note: in case you do not have a mentor, the remuneration meant for 
+			the mentor will not be paid to the intern.</item>
+       	<item>Although it isn’t necessary to inform the HOD, the teacher is advised to do so. 
+       	    If the internship is part of some academic credit criterion, then it is mandatory.</item>
+       	<item>Yes, the same teacher can mentor more than one student. 
+       	    The teacher will have to submit separate undertaking forms for each student being mentored.</item>
+       	<item>No, more than one student cannot work on the same book.</item>
+       	<item>No, There is no need to come to IIT Bombay at any phase of the internship. 
+       	    All the correspondence will be carried out via e­mails and/or postal services.</item>
+    </string-array>
+    
+    <string-array name="questions_array2">
+        <item>1. How many books can I propose?</item>
+        <item>2. Can I mail and ask if a book can be submitted for the book proposal?</item>
+        <item>3. Can I mail my book proposal?</item>
+        <item>4. Can I propose a book that has been completed or is under progress as a different edition?</item>
+        <item>5. Do I need to know Oscad before I submit my book proposal?</item>
+        <item>6. How many days do I have to submit the temporary allotment code?</item>
+        <item>7. Can I refer to some solved examples as reference?</item>
+        <item>8. Can I use some other computing package for creating TBC?</item>
+        <item>9. How many days does it take to get a temporary and final allotment?</item>
+        <item>10. When can I start the simulation exercises?</item>
+        <item>11. I have completed solving all the examples in the entire textbook. What do I do now?</item>
+    </string-array>
+    
+    <string-array name="answers_array2">
+        <item>Initially, an applicant can propose 3 books. One of the proposed books will 
+            then be allotted for creating Textbook companion. However, if a student is 
+            currently working on a particular book, then no other book should be proposed 
+            until the previously allotted book has been completed successfully.</item>
+        <item>Before you mail us please check the http://www.oscad.in/Completed_Books 
+            and http://www.oscad.in/Books_Progress to get an idea as to whether 
+            the book can be suggested.</item>
+        <item>No, please use the book proposal form (http://www.oscad.in/proposal) to submit your proposal.</item>
+        <item>No, you cannot propose a book that has either been completed or is under progress as a different edition.</item>
+        <item>Yes, you need to learn Oscad to submit the temporary allotment solutions. 
+            Spoken Tutorials are available for self-­learning of Oscad software. 
+            Please visit: http://oscad.in/resources/tutorials</item>
+        <item>7­ to 10 days depending on the book and number of examples.</item>
+        <item>Yes, the solved examples for completed books under TBC 
+            activity are available for free downloading. 
+            The solved examples can be referred if needed.</item>
+        <item>We encourage you to use Oscad. For use of any other open source software 
+            package, contact us at textbook-companion@oscad.in.</item>
+        <item>It takes three days to get a temporary allotment from the day you submit 
+            your book proposal. Further, it may take another ten days from the day you 
+            submit the temporary allotment code, to get the final allotment. 
+            Please contact us only if you haven\'t heard from us in ten days.</item>
+        <item>The simulation exercises can be started as soon as the book proposed by you is approved 
+            and book allotment is confirmed. The confirmation will be communicated via an automated e­mail.</item>
+        <item>Please contact the Oscad team at textbook-companion@oscad.in 
+            and let them know that your solutions are completed.
+        </item>
+    </string-array>
+    
+    
+    <string-array name="questions_array3">
+        <item>1. When do I submit the internship forms?</item>
+        <item>2. Is there a deadline for submitting the internship forms?</item>
+        <item>3. What is the procedure for acquiring certificates/honorarium?</item>
+        <item>4. How long does it take to receive my Honorarium?</item>
+        <item>5. Why is there a delay in my Honorarium payment?</item>
+        <item>6. What about intellectual rights of the TBC?</item>
+        <item>7. Can I propose more books after completion?</item>
+        <item>8. I have finished one or more textbook companions already. Is there any other activity I can participate in?</item>
+        <item>9. Where do I get a one ­rupee revenue stamp? How does a revenue stamp look like?</item>
+        <item>10. Whom do I contact in case I still have a doubt?</item>
+    </string-array>
+    
+    <string-array name="answers_array3">
+        <item>You can submit the forms once the review for the examples 
+            of the entire textbook has been completed and your solutions has been approved.</item>
+        <item>There is no definite deadline for submitting the internship forms.</item>
+        <item>The uploaded simulation solutions will be reviewed and once the solutions 
+            are found satisfactory the applicant will be informed. 
+            The intern has to mail the forms after completion of the review. 
+            The candidate should then mail ALL the internship related forms AFTER 
+            filling the appropriate details to IIT Bombay to the following address:&lt;br /&gt;&lt;br /&gt;
+			Prof. Kannan Moudgalya,&lt;br /&gt;
+			Department of Chemical Engineering,&lt;br /&gt;
+			IIT Bombay, Powai - 400076&lt;br /&gt;
+			Mumbai&lt;br /&gt;
+			Ph: 022 2576 4133&lt;br /&gt;&lt;br /&gt;
+
+			Please write "Textbook Companion" on top of the envelope. 
+			The certificates will then be sent via post after all the duly filled forms are received.</item>
+        <item>If you do not get your money within 45 days after submitting working code, please get in touch with us ­ 
+            we shall be happy to assist you. If there are problems with the submitted code, 
+            naturally, there will be further delays.</item>
+        <item>On submission of a Textbook Companion, the review process 
+            involves several checks including but not limited to:-&lt;br /&gt;&lt;br /&gt;
+			a. Incorrect simulation output.&lt;br /&gt;
+			b. Completeness of the book ­missing parts (or) sections of the solutions.&lt;br /&gt;
+			c. Plagiarism.&lt;br /&gt;&lt;br /&gt;
+			
+			In this regards, we test EVERY solution of EVERY participant thoroughly. 
+			As there are many participants involved in this activity, 
+			this verification process takes considerable amount of time. Moreover, 
+			dispatch of Government money requires approvals from the Dean\'s Office, Accounts 
+			Office, etc., which also takes some time. Due to the above listed reasons, 
+			immediate acceptance of a Textbook Companion and processing of payment gets delayed.</item>
+        <item>The copyrights for TBC will be handed to FOSSEE Project. 
+            The name of creator of TBC and teacher will be published on the website. 
+            The TBC will be available for free downloading on Oscad website.</item>
+        <item>Yes, you are welcome to propose more books. Please encourage your friends to take part in this internship.</item>
+        <item>You can take part in the Lab Migration Activity 
+            (http://oscad.in/lab-migration-project) and the Textbook Companion for 
+            Python (http://fossee.in/deliverables)</item>
+        <item>You can buy a one rupee revenue stamp from the Post Office. 
+            Here is a scan of a fully filled internship form 
+            ­http://oscad.in/files/download/forms/example­filled­receipt.pdf</item>
+        <item>You can contact the Oscad team at textbook-companion@oscad.in.</item>
+        
+    </string-array>
 </resources>
