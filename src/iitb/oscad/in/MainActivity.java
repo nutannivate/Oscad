@@ -378,8 +378,8 @@ ActionBar.TabListener {
 				int list1[]=new int[]{R.string.FAQs,R.string.FAQs2,R.string.FAQs3,R.string.FAQs4,R.string.FAQs5,R.string.FAQs6};
 
 				for (int i = 0; i < list.length; i++) {
-					TextView contentTextView = (TextView) rootView
-							.findViewById(list[i]);
+					TextView contentTextView = (TextView) rootView.findViewById(list[i]);
+					contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
 					contentTextView.setBackgroundColor(Color.parseColor("#15060b"));
 					contentTextView.setTextColor(Color.parseColor("#d0ad85"));
 					contentTextView.setText(Html.fromHtml(getString(list1[i])));
@@ -494,7 +494,45 @@ ActionBar.TabListener {
 					}
 				});
 				break;
+			case 10:
+				rootView = inflater.inflate(R.layout.list,container, false);
+				
+				 String[] from_names = new String[] {"names_"};
+				 int[] to_id = new int[] {R.id.tvworkshops};
+	      
+			     final List<HashMap<String, String>> fillMaps2 = new ArrayList<HashMap<String, String>>();
+			     
+				final String workshops[] = new String[]{"Past Remote Workshops","Upcoming Remote Workshops","Workshop Details"};
+				 for (int i = 0; i < workshops.length; i++) {
+				     HashMap<String, String> map = new HashMap<String, String>();
+		        	 map.put("names_",workshops[i]);
+			         fillMaps2.add( map);
 
+		        }
+
+		        SimpleAdapter workshop_adapter;
+		        adapter = new SimpleAdapter(getActivity().getApplicationContext(), fillMaps2,
+	 				R.layout.workshops, from_names, to_id);
+			
+		        final ListView listv = (ListView) rootView.findViewById( R.id.listView1 );
+		        final TextView textview = (TextView) rootView.findViewById( R.id.textView5);
+		        textview.setText("Workshops");
+		        listv.setAdapter(adapter);	
+		        listv.setOnItemClickListener(new OnItemClickListener() {
+		        	
+					@Override
+					public void onItemClick(AdapterView a, View v, int position, long id) {
+						
+						if(position==0){
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://oscad.in/completed_workshops_list")));
+						}
+						else if(position==1){
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://oscad.in/upcoming_workshops")));
+						}else{
+							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://oscad.in/view_completed_workshop")));
+						}
+					}
+				});
 			default:
 				break;
 			}
