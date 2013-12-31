@@ -17,7 +17,7 @@ public class information extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.info);
-		
+
 		Bundle extras = getIntent().getExtras();
 		if (extras == null) {
 			System.out.println("no info"); 
@@ -28,7 +28,7 @@ public class information extends Activity{
 			System.out.println("info:" + subitem);
 
 		}
-		 
+
 		TextView title = (TextView) findViewById(R.id.title);
 		text_book = (TextView) findViewById(R.id.text_book);
 		text_book1 = (TextView) findViewById(R.id.text_book1);
@@ -78,14 +78,43 @@ public class information extends Activity{
 			text_book3.setText(Html.fromHtml(getString(R.string.Honorarium3)));
 			text_book4.setText(Html.fromHtml(getString(R.string.Honorarium4)));
 
+		}else if ("Lab Migration Project".equals(subitem)) {
+			title.setText("Lab Migration");
+			text_book.setText(Html.fromHtml(getString(R.string.lab_migration1)));
+			text_book1.setText(Html.fromHtml(getString(R.string.lab_migration2)));
+			text_book2.setText(Html.fromHtml(getString(R.string.lab_migration3)));
+			text_book2.setMovementMethod(LinkMovementMethod.getInstance());
+			text_book3.setVisibility(TextView.GONE);
+			text_book4.setVisibility(TextView.GONE);
+			LinearLayout.setVisibility(TextView.GONE);
 		}
-//		}else if ("Download Codes".equals(subitem)) {
-//			String url = "http://oscad.in/textbook_run";
-//			Intent i = new Intent(Intent.ACTION_VIEW);
-//			i.setData(Uri.parse(url));
-//			startActivity(i);	
-//			}
-	
+		else if ("Lab Migration Procedure".equals(subitem)) {
+			title.setText("Lab Migration Procedure");
+			text_book.setText(Html.fromHtml(getString(R.string.lab_migration4)));
+			text_book1.setText(Html.fromHtml(getString(R.string.lab_migration5)));
+			text_book1.setMovementMethod(LinkMovementMethod.getInstance());
+			text_book2.setText(Html.fromHtml(getString(R.string.lab_migration6)));
+			text_book3.setText(Html.fromHtml(getString(R.string.lab_migration7)));
+			text_book3.setMovementMethod(LinkMovementMethod.getInstance());
+			text_book4.setText(Html.fromHtml(getString(R.string.lab_migration8)));
+
+		}
+		else if ("Lab Migration Honorarium".equals(subitem)) {
+			title.setText("Lab Migration Honorarium");
+			text_book.setText(Html.fromHtml(getString(R.string.lab_migration9)));
+			text_book1.setText(Html.fromHtml(getString(R.string.lab_migration10)));
+			text_book2.setVisibility(TextView.GONE);
+			text_book3.setVisibility(TextView.GONE);
+			text_book4.setVisibility(TextView.GONE);
+			LinearLayout.setVisibility(TextView.GONE);
+		}
+		//		}else if ("Download Codes".equals(subitem)) {
+		//			String url = "http://oscad.in/textbook_run";
+		//			Intent i = new Intent(Intent.ACTION_VIEW);
+		//			i.setData(Uri.parse(url));
+		//			startActivity(i);	
+		//			}
+
 
 
 	}

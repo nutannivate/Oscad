@@ -62,7 +62,7 @@
     <string name="FAQs3">
         Now Oscad window will open up.
         
-     </string>
+    </string>
 
     
     <string name="FAQs5">
@@ -70,7 +70,7 @@
         1.  If a footprint library error is displayed on opening Footprint Editor, do the following: 
     </string>
     
-      <string name="FAQs4">
+    <string name="FAQs4">
     
 	    -  On the footprint editor window, click on Preferences and choose Options. &lt;br /&gt;
 	
@@ -81,58 +81,37 @@
 	    -  Manually select all the .mod files and click on Open. &lt;br /&gt;
 	
 	    -  Do the same for KiCad\share\modules\packages3d.
-      
-      
-      
-        
     </string>
     
-      
-      <string name="FAQs6">
-          
-          
-
+    <string name="FAQs6">
 		2. If on launching Ngspice, an error, "System cannot execute the program" occurs, download and install the exe file 
 		from <![CDATA[<a href="http://www.microsoft.com/en-us/download/details.aspx?id=29">here</a>]]>  then
 		 Relaunch Oscad.&lt;br /&gt;&lt;br /&gt;
 
-
    		3. If you are unable to launch KiCad, then uninstall KiCad and install it again in the C directory. For installing, go to Oscad windows installer folder. Go to the folder resources. Double click on the KiCad.exe file. Give the installation path as C:\ After installation, change the environment variable path of Kicad to C:\KiCad\bin.&lt;br /&gt;
-          
-      </string>
+    </string>
       
-      
-      
- <string name="text_book">
-          
-          The Textbook Companion Project (TBC) aims to create Oscad project ﬁles for all the solved
-         
+ 	<string name="text_book">
+          The Textbook Companion Project (TBC) aims to create Oscad project ﬁles for all the solved 
           simulation exercises present in standard Electrical and Electronics Engineering textbooks.&lt;br /&gt;&lt;br /&gt;
-
 	   	  The objectives of this project are:
-          
-      </string>
+    </string>
       
-      <string name="text_book2">
-          
-          	-  To make it easy for users of such textbooks to start using Oscad. &lt;br /&gt;
-
-  			-  To improve the documentation available for Oscad.
-      </string>
+    <string name="text_book2">
+       	-  To make it easy for users of such textbooks to start using Oscad. &lt;br /&gt;
+		-  To improve the documentation available for Oscad.
+    </string>
       
-      <string name="text_book3">
-          
+    <string name="text_book3">
 		The Oscad Textbook Companion project is managed by the FOSSEE project,IIT Bombay.&lt;br /&gt;
 		Textbook Companion internship is an internship programme for college 
 		students who want to undertake an internship. The project will require a teacher as a mentor.
 		The mentor must have taught the specific subject for at least one year. The mentor will guide the student 
 		through the project and will be responsible for the intern\'s submissions.&lt;br /&gt;&lt;br /&gt;
-		
 		The procedure is as follows:
- 		
-      </string>
+   	</string>
       
-      <string name="text_book4">
+    <string name="text_book4">
           1. You should know or learn Oscad. Resources are provided at Oscad Resources. Learning Oscad is easy and 
           if someone listens to and practices the Spoken Tutorials on Oscad, it can be learned in 2-3 days. For use of
            any software package other than Oscad, contact us at textbookcompanion@oscad.in &lt;br /&gt;&lt;br /&gt;
@@ -171,28 +150,22 @@
 
 			8. You will be awarded an honorarium of ₹ 150 per example and your mentor ₹ 100 per example 
 			for completing this work. &lt;br /&gt;
-          
-          
-      </string>
+	</string>
       
-      
-      <string name="guideline">
-          
+    <string name="guideline">
             1. Avoid spaces in project names. &lt;br /&gt;&lt;br /&gt;
 			2. Project name should be same as the example number.(e.g example_2.3) &lt;br /&gt;&lt;br /&gt;
 			3. Give the respective names and values to the elements as given in the book. &lt;br /&gt;&lt;br /&gt;
 			4. Put the plot option at the inputs and outputs. &lt;br /&gt;&lt;br /&gt;
 			5. Use the proper model of the devices as mentioned in the book, if you are unable to find models of device then contact us at textbook-companion@oscad.in. &lt;br /&gt;&lt;br /&gt;
 			6. Once you have completed the project, mail us at textbook-companion@oscad.in with complete details including your name and allotted book. &lt;br /&gt;
-          
-      </string>
-      <string name="Honorarium">
-          
-          			Please note the following important honorarium details:
-          
-      </string>
-      <string name="Honorarium1" formatted="false">
-          
+   	</string>
+   	
+    <string name="Honorarium">
+   			Please note the following important honorarium details:
+    </string>
+    
+    <string name="Honorarium1" formatted="false">
 			1. After submission of ALL the projects, the review is to be requested by the student. 
 			If ALL the solutions for the solved examples from the proposed book are found to be working satisfactorily at 
 			the time of FIRST review, the student and the mentor will get a bonus amount of ₹ 2,000/- and ₹ 1,000/- respectively, 
@@ -204,24 +177,22 @@
 			
 			3. If ANY code is found to be erroneous after the SECOND review, the student shall not receive any amount as honorarium.
 			 The proposed book and the uploaded codes shall be deleted from the Textbook Companion database. &lt;br /&gt;
-      </string>
+    </string>
       
-      <string name="Honorarium2">
+    <string name="Honorarium2">
           
-          	 <![CDATA[<b>Note:</b>]]>&lt;br /&gt;
-			On submission of a Textbook Companion, the review process involves several checks including but not limited to:
-      </string>
+        <![CDATA[<b>Note:</b>]]>&lt;br /&gt;
+		On submission of a Textbook Companion, the review process involves several checks including but not limited to:
+   	</string>
       
-        <string name="Honorarium3">
-           	  1. Completeness of the project. &lt;br /&gt;&lt;br /&gt;
-				2. Completeness of the book - missing parts (or) sections. &lt;br /&gt;&lt;br /&gt;
-				3. Plagiarism. &lt;br /&gt;&lt;br /&gt;
-				4. ERC and DRC checks.
-      </string>
-      
+    <string name="Honorarium3">
+           	1. Completeness of the project. &lt;br /&gt;&lt;br /&gt;
+			2. Completeness of the book - missing parts (or) sections. &lt;br /&gt;&lt;br /&gt;
+			3. Plagiarism. &lt;br /&gt;&lt;br /&gt;
+			4. ERC and DRC checks.
+     </string>
         
-        <string name="Honorarium4" >
-            
+     <string name="Honorarium4" >
             In this regard, we are forced to test EVERY code of EVERY participant thoroughly. Due to many participants, this 
             verification process takes considerable amount of time. Moreover, dispatch of Government money requires approvals 
             from the Dean\'s Office, Accounts Office, etc. which also takes some time. &lt;br /&gt;&lt;br /&gt;
@@ -230,7 +201,90 @@
 			 The participants are therefore requested to show some patience. However, if you do not get your money within 
 			 45 days after submitting working code, please get in touch with us - we shall be happy to assist you. 
 			 If there are problems with the submitted code, naturally, there will be further delays.&lt;br /&gt;&lt;br /&gt;
-        </string>
+    </string>
    
-        
+    <string name="lab_migration1">
+	    Lab Migration aims to migrate labs that use proprietary software (e.g. OrCAD, PSpice) to a Free 
+	    and Open Source Software (FOSS) only lab. We recommend the use of Oscad as it offers the same 
+	    capabilities and ease of use as any equivalent proprietary EDA tool for circuit design, simulation, 
+	    analysis and PCB design without having to pay a huge amount of money to procure licenses. We 
+	    invite students and faculty from all Engineering Colleges to come forward and take part in this 
+	    project.&lt;br /&gt;&lt;br /&gt;The Lab Migration team helps in the following ways:
+    </string>
+    <string name="lab_migration2">
+        - Provide suggestions on the different ways Oscad can be implemented in the laboratory. &lt;br /&gt;&lt;br /&gt;
+        - Coordinate the migration of the lab to FOSS only laboratory. &lt;br /&gt;&lt;br /&gt;
+        - Provide solutions to the lab\'s problem statements. &lt;br /&gt;&lt;br /&gt;
+        - Conduct Oscad workshops free of cost.
+    </string>
+    <string name="lab_migration3">
+        Learn how to submit a proposal here ­ <![CDATA[<a href="http://oscad.in/lab_migration/proposal">http://oscad.in/lab_migration/proposal</a>]]>. &lt;br /&gt;&lt;br /&gt;
+        We can also be reached directly at <![CDATA[<a href="http://labmigration@oscad.in/">http://labmigration@oscad.in</a>]]>.&lt;br /&gt;
+    </string>
+    <string name="lab_migration4">
+        Teachers/Professors/Students from educational institutions across the country can participate in the Lab Migration project. 
+        The participation procedure is different for college teachers and students.&lt;br /&gt;&lt;br /&gt;
+        For College Teachers:
+    </string>
+    <string name="lab_migration5">
+		1. Fill the Lab Migration proposal form provided at 
+		<![CDATA[<a href="http://oscad.in/lab_migration/proposal/">http://oscad.in/lab_migration/proposal</a>]]>. 
+		To access the above mentioned page, please log in to the website. 
+		If you do not have a login account, please register here. 
+		In the proposal form provide details about your lab course, 
+		problem statements, titles of the exercises.&lt;br /&gt;&lt;br /&gt;
+	
+		2. In the proposal form, choose between providing the solutions for the problems 
+		mentioned in the proposal form by yourself or floating the problems to the Lab Migration Project community.&lt;br /&gt;&lt;br /&gt;
+	
+		3. In case you are not providing the Oscad solutions, other community members 
+		can propose to provide the Oscad solutions for the problems mentioned in your Lab Migration proposal.&lt;br /&gt;&lt;br /&gt;
+	
+		4. While filling the proposal form, select whether you want the Oscad solutions of the 
+		problems mentioned in the proposal form to be made available for other members to view/download/use.&lt;br /&gt;&lt;br /&gt;
+	
+		5. Once you have filled all the required fields, submit the form. On successful 
+		submission of the proposal form, you will receive a notification e-mail.&lt;br /&gt;&lt;br /&gt;
+	
+		6. You will receive an approval/disapproval mail within few days. If you have chosen to 
+		submit the Oscad solutions yourself, you can start creating projects in Oscad for the 
+		assigned lab and upload the codes on the interface.
+    </string>
+    <string name="lab_migration6">
+        For Students and other Community Members:
+    </string>
+    <string name="lab_migration7">
+        1. Visit the page <![CDATA[<a href="http://oscad.in/lab_migration/open_proposal/">http://oscad.in/lab_migration/open_proposal</a>]]>. Please log in to access 
+        the above mentioned page. If you do not have a login account, 
+        please visit <![CDATA[<a href="http://oscad.in/user/register/">http://oscad.in/user/register</a>]]> to create an account. 
+        This page will have a list of lab problems for which Oscad solutions are to be provided.&lt;br /&gt;&lt;br /&gt;
+
+		2. Select the lab for which you want to provide the solution. This you can do by 
+		clicking on the "Apply" button next to the "Title of the Lab". 
+		This action will take you to "Lab Migration Solution Proposal" form.&lt;br /&gt;&lt;br /&gt;
+		
+		3. Once you submit the form, we will approve it taking into consideration your proposal and other proposals.&lt;br /&gt;&lt;br /&gt;
+		
+		4. You will receive an email informing whether your proposal has been approved or disapproved. 
+		Once your proposal is approved, you can start creating the projects in Oscad for the assigned lab 
+		and upload the codes on the interface.
+    </string>
+    <string name="lab_migration8">
+        Note:
+        Any user who provides solutions for a lab course, can only work on one lab at a time. 
+        They can move on to another lab once the current lab\'s solutions have been provided.&lt;br /&gt;
+    </string>
+    <string name="lab_migration9">
+        The honorarium details for Lab Migration are as follows:
+    </string>
+    <string name="lab_migration10">
+		- Rs.2000/- for the Faculty- For submitting the lab proposal and providing an undertaking 
+			that the Oscad solutions provided for the lab will be used for 2 years.&lt;br /&gt;&lt;br /&gt;
+    	- Rs.2000/- for the HoD- For providing an undertaking that the Oscad solutions 
+    		provided for the lab will be used for 2 years.&lt;br /&gt;&lt;br /&gt;
+    	- Rs.1000/- for the Faculty- For reviewing the code that has been provided to the teacher.&lt;br /&gt;&lt;br /&gt;
+    	- Rs.4000/- for the Solution Provider- For providing solutions to the lab\'s exercises.
+    		The faculty can also submit the solutions to the lab exercises.&lt;br /&gt;&lt;br /&gt;
+    	- Rs.1000/- for the Principal of the college.
+     </string>
 </resources>

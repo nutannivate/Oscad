@@ -41,7 +41,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements
-		ActionBar.TabListener {
+ActionBar.TabListener {
 
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -58,18 +58,18 @@ public class MainActivity extends FragmentActivity implements
 	 */
 	ViewPager mViewPager;
 	static List<String> groupList;
-    static List<String> childList;
-    static Map<String, List<String>> tutorials;
-    static ExpandableListView expListView;
+	static List<String> childList;
+	static Map<String, List<String>> tutorials;
+	static ExpandableListView expListView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		
+
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
@@ -84,12 +84,12 @@ public class MainActivity extends FragmentActivity implements
 		// tab. We can also use ActionBar.Tab#select() to do this if we have
 		// a reference to the Tab.
 		mViewPager
-				.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-					@Override
-					public void onPageSelected(int position) {
-						actionBar.setSelectedNavigationItem(position);
-					}
-				});
+		.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+			@Override
+			public void onPageSelected(int position) {
+				actionBar.setSelectedNavigationItem(position);
+			}
+		});
 
 		// For each of the sections in the app, add a tab to the action bar.
 		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
@@ -195,7 +195,7 @@ public class MainActivity extends FragmentActivity implements
 		 * fragment.
 		 */
 		public static final String ARG_SECTION_NUMBER = "section_number";
-        Context thisContext;
+		Context thisContext;
 
 		public DummySectionFragment() {
 		}
@@ -207,313 +207,349 @@ public class MainActivity extends FragmentActivity implements
 			int arg_no = getArguments().getInt(ARG_SECTION_NUMBER);
 			switch (arg_no) {
 			case 1:
-					
-						rootView = inflater.inflate(R.layout.home,container, false);
-						TextView homecontentTextView = (TextView) rootView.findViewById(R.id.intro);
-						homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-						SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.intro)));
-						Linkify.addLinks(s, Linkify.WEB_URLS);
-						homecontentTextView.setText(s);
-						
-						homecontentTextView = (TextView) rootView.findViewById(R.id.features);
-						homecontentTextView.setText(Html.fromHtml(getString(R.string.features)));
-						
-						homecontentTextView = (TextView) rootView.findViewById(R.id.books);
-						homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-						homecontentTextView.setText(Html.fromHtml(getString(R.string.books)));
-					
+
+				rootView = inflater.inflate(R.layout.home,container, false);
+				TextView homecontentTextView = (TextView) rootView.findViewById(R.id.intro);
+				homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+				SpannableString s = new SpannableString(Html.fromHtml(getString(R.string.intro)));
+				Linkify.addLinks(s, Linkify.WEB_URLS);
+				homecontentTextView.setText(s);
+
+				homecontentTextView = (TextView) rootView.findViewById(R.id.features);
+				homecontentTextView.setText(Html.fromHtml(getString(R.string.features)));
+
+				homecontentTextView = (TextView) rootView.findViewById(R.id.books);
+				homecontentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+				homecontentTextView.setText(Html.fromHtml(getString(R.string.books)));
+
 				break;
 			case 2:
-					rootView = inflater.inflate(R.layout.downloads,	container, false);
-					/***
-					 * Download oscad installer tar file for Linux
-					 */
-					TextView linux1 = (TextView)rootView.findViewById(R.id.down_linux);
-					linux1.setMovementMethod(LinkMovementMethod.getInstance());
-					String link_linux = "<a href='http://www.oscad.in/download/OSCAD_installer.tar.gz'>Oscad Installer - Linux</a>&nbsp;&nbsp;(6.2 MB)";
-					linux1.setText(Html.fromHtml(link_linux));
-	
-					/***
-					 * Download oscad installer zip file for Windows
-					 */
-					TextView windows = (TextView)rootView.findViewById(R.id.down_oscad_IW);
-					windows.setMovementMethod(LinkMovementMethod.getInstance());
-					String text = "<a href='http://www.oscad.in/download/Oscad-windows-installer.zip'>Oscad Installer - Windows</a>&nbsp;&nbsp;(150 MB)";
-					windows.setText(Html.fromHtml(text));
-					
-					/***
-					 * Download oscad installation instrucion PDF file.
-					 */
-					TextView windowsInsta = (TextView)rootView.findViewById(R.id.down_oscad_II);
-					windowsInsta.setMovementMethod(LinkMovementMethod.getInstance());
-					String text1 = "<a href='http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf'>Oscad Installation Instructions for Windows</a>";
-					windowsInsta.setText(Html.fromHtml(text1));
-					
-					/***
-					 * Download oscad e-book pdf.
-					 */
-					Button EBook = (Button)rootView.findViewById(R.id.down_Ebook);
-					EBook.setOnClickListener(new OnClickListener() {
-						
-						@Override
-						public void onClick(View arg0) {
-							
-							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/oscad.pdf")));
-						}
-					});
-					/***
-					 * Download oscad example .
-					 */
-					Button osExample = (Button)rootView.findViewById(R.id.down_OE);
-					osExample.setOnClickListener(new OnClickListener() {
-						
-						@Override
-						public void onClick(View arg0) {
-							
-							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/Examples.tar.gz")));
-						}
-					});
-					
-					
-					/***
-					 * Download oscad errata pdf .
-					 */
-					Button errata = (Button)rootView.findViewById(R.id.down_EOB);
-					errata.setOnClickListener(new OnClickListener() {
-						
-						@Override
-						public void onClick(View arg0) {
-							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/errata.pdf")));
-						}
-					});
-					
-					/***
-					 * Download Oscad Companion CD .
-					 */
-					Button linux = (Button)rootView.findViewById(R.id.down_OCCD);
-					linux.setOnClickListener(new OnClickListener() {
-						
-						@Override
-						public void onClick(View arg0) {
-							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/download/Oscad.zip")));
-						}
-					});
-					
-					/***
-					 * It will intent to micro book page 
-					 */
-					TextView micro = (TextView)rootView.findViewById(R.id.down_micro);
-					micro.setMovementMethod(LinkMovementMethod.getInstance());
-					String link_micro = "<a href='http://www.flipkart.com/microelectronic-circuits-theory-applications-with-cd-5/p/itmczytdpnuhxm6q'>Microelectronic Circuits by Sedra and Smith.</a>";
-					micro.setText(Html.fromHtml(link_micro));
+				rootView = inflater.inflate(R.layout.downloads,	container, false);
+				/***
+				 * Download oscad installer tar file for Linux
+				 */
+				TextView linux1 = (TextView)rootView.findViewById(R.id.down_linux);
+				linux1.setMovementMethod(LinkMovementMethod.getInstance());
+				String link_linux = "<a href='http://www.oscad.in/download/OSCAD_installer.tar.gz'>Oscad Installer - Linux</a>&nbsp;&nbsp;(6.2 MB)";
+				linux1.setText(Html.fromHtml(link_linux));
+
+				/***
+				 * Download oscad installer zip file for Windows
+				 */
+				TextView windows = (TextView)rootView.findViewById(R.id.down_oscad_IW);
+				windows.setMovementMethod(LinkMovementMethod.getInstance());
+				String text = "<a href='http://www.oscad.in/download/Oscad-windows-installer.zip'>Oscad Installer - Windows</a>&nbsp;&nbsp;(150 MB)";
+				windows.setText(Html.fromHtml(text));
+
+				/***
+				 * Download oscad installation instrucion PDF file.
+				 */
+				TextView windowsInsta = (TextView)rootView.findViewById(R.id.down_oscad_II);
+				windowsInsta.setMovementMethod(LinkMovementMethod.getInstance());
+				String text1 = "<a href='http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf'>Oscad Installation Instructions for Windows</a>";
+				windowsInsta.setText(Html.fromHtml(text1));
+
+				/***
+				 * Download oscad e-book pdf.
+				 */
+				Button EBook = (Button)rootView.findViewById(R.id.down_Ebook);
+				EBook.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/oscad.pdf")));
+					}
+				});
+				/***
+				 * Download oscad example .
+				 */
+				Button osExample = (Button)rootView.findViewById(R.id.down_OE);
+				osExample.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/Examples.tar.gz")));
+					}
+				});
+
+
+				/***
+				 * Download oscad errata pdf .
+				 */
+				Button errata = (Button)rootView.findViewById(R.id.down_EOB);
+				errata.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/book/errata.pdf")));
+					}
+				});
+
+				/***
+				 * Download Oscad Companion CD .
+				 */
+				Button linux = (Button)rootView.findViewById(R.id.down_OCCD);
+				linux.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/download/Oscad.zip")));
+					}
+				});
+
+				/***
+				 * It will intent to micro book page 
+				 */
+				TextView micro = (TextView)rootView.findViewById(R.id.down_micro);
+				micro.setMovementMethod(LinkMovementMethod.getInstance());
+				String link_micro = "<a href='http://www.flipkart.com/microelectronic-circuits-theory-applications-with-cd-5/p/itmczytdpnuhxm6q'>Microelectronic Circuits by Sedra and Smith.</a>";
+				micro.setText(Html.fromHtml(link_micro));
 				break;
 			case 3:
-			
-					//download oscad installation scripts
-					rootView = inflater.inflate(R.layout.spoken_tutorial,container, false);
-					Button windowInstuction = (Button)rootView.findViewById(R.id.windowInstruction);
-					//for windows
-					windowInstuction.setOnClickListener(new OnClickListener() {
-						
-						@Override
-						public void onClick(View arg0) {
-							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf")));
-						}
-					});
-					
-					//for linux
-					Button linuxSheet = (Button)rootView.findViewById(R.id.linuxSheet);
-					linuxSheet.setOnClickListener(new OnClickListener() {
-						
-						@Override
-						public void onClick(View arg0) {
-							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Linux.pdf")));
-						}
-					});
-					
-					//windows sheets
-					Button windowSheet = (Button)rootView.findViewById(R.id.windowSheet);
-					windowSheet.setOnClickListener(new OnClickListener() {
-						
-						@Override
-						public void onClick(View arg0) {
-							startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Windows.pdf")));
-						}
-					});
-					
-					//expandable list activity to view or download spoken tutorials
-				    
-				    createGroupList();
-				    
-			        createCollection();
-			 
-			        expListView = (ExpandableListView) rootView.findViewById(R.id.expandableListView1);
-			        final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
-			                getActivity(), groupList, tutorials);
-			        expListView.setAdapter(expListAdapter);
-		        break;
-			case 4:
-					rootView = inflater.inflate(R.layout.contact,container, false);
-					
-					String[] contact_to = new String[]{"Textbook Companion : http://textbook-companion@oscad.in",
-							"Lab migration : http://lab-migration@oscad.in",
-							"SELF workshops : http://SELF-workshop@oscad.in",
-							"Oscad development and enhancing its capabilities : http://Oscad-dev@oscad.in",
-							"Feedback on Oscad book : http://Oscad-textbook@oscad.in"};
-					int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
-					
-					for (int i = 0; i < contact_to.length; i++) {
-						TextView contentTextView = (TextView) rootView.findViewById(ids[i]);
-						contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-						SpannableString string = new SpannableString(Html.fromHtml(contact_to[i]));
-						Linkify.addLinks(string, Linkify.WEB_URLS);
-						contentTextView.setText(string);
+
+				//download oscad installation scripts
+				rootView = inflater.inflate(R.layout.spoken_tutorial,container, false);
+				Button windowInstuction = (Button)rootView.findViewById(R.id.windowInstruction);
+				//for windows
+				windowInstuction.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf")));
 					}
+				});
+
+				//for linux
+				Button linuxSheet = (Button)rootView.findViewById(R.id.linuxSheet);
+				linuxSheet.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Linux.pdf")));
+					}
+				});
+
+				//windows sheets
+				Button windowSheet = (Button)rootView.findViewById(R.id.windowSheet);
+				windowSheet.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/instruction-sheet/Oscad-Instruction-Sheet-Windows.pdf")));
+					}
+				});
+
+				//expandable list activity to view or download spoken tutorials
+
+				createGroupList();
+
+				createCollection();
+
+				expListView = (ExpandableListView) rootView.findViewById(R.id.expandableListView1);
+				final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
+						getActivity(), groupList, tutorials);
+				expListView.setAdapter(expListAdapter);
+				break;
+			case 4:
+				rootView = inflater.inflate(R.layout.contact,container, false);
+
+				String[] contact_to = new String[]{"Textbook Companion : http://textbook-companion@oscad.in",
+						"Lab migration : http://lab-migration@oscad.in",
+						"SELF workshops : http://SELF-workshop@oscad.in",
+						"Oscad development and enhancing its capabilities : http://Oscad-dev@oscad.in",
+				"Feedback on Oscad book : http://Oscad-textbook@oscad.in"};
+				int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
+
+				for (int i = 0; i < contact_to.length; i++) {
+					TextView contentTextView = (TextView) rootView.findViewById(ids[i]);
+					contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+					SpannableString string = new SpannableString(Html.fromHtml(contact_to[i]));
+					Linkify.addLinks(string, Linkify.WEB_URLS);
+					contentTextView.setText(string);
+				}
 				break;
 			case 5:
-					rootView = inflater.inflate(R.layout.faqs,container, false);
-					
-					int list[]=new int[]{R.id.textView2,R.id.textView3,R.id.textView4,R.id.textView6,R.id.textView7,R.id.textView8};
-					
-					int list1[]=new int[]{R.string.FAQs,R.string.FAQs2,R.string.FAQs3,R.string.FAQs4,R.string.FAQs5,R.string.FAQs6};
-		
-					for (int i = 0; i < list.length; i++) {
-						TextView contentTextView = (TextView) rootView
-								.findViewById(list[i]);
-						contentTextView.setBackgroundColor(Color.parseColor("#15060b"));
-						contentTextView.setTextColor(Color.parseColor("#d0ad85"));
-						contentTextView.setText(Html.fromHtml(getString(list1[i])));
-		
-					}
-					
-					int list2[]=new int[]{R.id.textView1,R.id.textView5};
-					
-					for (int i = 0; i < list2.length; i++) {
-						TextView contentTextView1 = (TextView) rootView.findViewById(list2[i]);
-						contentTextView1.setBackgroundColor(Color.parseColor("#302b31"));
-						contentTextView1.setTextColor(Color.parseColor("#d0ad85"));
-					}
-					break;
+				rootView = inflater.inflate(R.layout.faqs,container, false);
+
+				int list[]=new int[]{R.id.textView2,R.id.textView3,R.id.textView4,R.id.textView6,R.id.textView7,R.id.textView8};
+
+				int list1[]=new int[]{R.string.FAQs,R.string.FAQs2,R.string.FAQs3,R.string.FAQs4,R.string.FAQs5,R.string.FAQs6};
+
+				for (int i = 0; i < list.length; i++) {
+					TextView contentTextView = (TextView) rootView
+							.findViewById(list[i]);
+					contentTextView.setBackgroundColor(Color.parseColor("#15060b"));
+					contentTextView.setTextColor(Color.parseColor("#d0ad85"));
+					contentTextView.setText(Html.fromHtml(getString(list1[i])));
+
+				}
+
+				int list2[]=new int[]{R.id.textView1,R.id.textView5};
+
+				for (int i = 0; i < list2.length; i++) {
+					TextView contentTextView1 = (TextView) rootView.findViewById(list2[i]);
+					contentTextView1.setBackgroundColor(Color.parseColor("#302b31"));
+					contentTextView1.setTextColor(Color.parseColor("#d0ad85"));
+				}
+				break;
 			case 6:
-					rootView = inflater.inflate(R.layout.contact,container, false);
-					
-					String[] weblinks = new String[]{"http://fossee.in/",
-							"http://scilab.in/",
-							"http://python.fossee.in/",
-							"http://cfd.fossee.in/",
-							"http://spoken-tutorial.org/"};
-					int[] id = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
-					
-					for (int i = 0; i < weblinks.length; i++) {
-						TextView contentTextView = (TextView) rootView.findViewById(id[i]);
-						contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
-						SpannableString sContact = new SpannableString(Html.fromHtml(weblinks[i]));
-						Linkify.addLinks(sContact, Linkify.WEB_URLS);
-						contentTextView.setText(sContact);
-					}
+				rootView = inflater.inflate(R.layout.contact,container, false);
+
+				String[] weblinks = new String[]{"http://fossee.in/",
+						"http://scilab.in/",
+						"http://python.fossee.in/",
+						"http://cfd.fossee.in/",
+				"http://spoken-tutorial.org/"};
+				int[] id = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
+
+				for (int i = 0; i < weblinks.length; i++) {
+					TextView contentTextView = (TextView) rootView.findViewById(id[i]);
+					contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
+					SpannableString sContact = new SpannableString(Html.fromHtml(weblinks[i]));
+					Linkify.addLinks(sContact, Linkify.WEB_URLS);
+					contentTextView.setText(sContact);
+				}
 				break;
 			case 7:
-			
+
 				break;
-			
+
 			case 8:
 				rootView = inflater.inflate(R.layout.list,container, false);
-				
-				 String[] from = new String[] {"names_"};
-				 int[] to = new int[] {R.id.tvname};
-	       
-			     final List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();
-			     
-					final String names[] = new String[]{"Textbook Companion Project","Internship","Guidelines for Coding","Honorarium","Textbook Companion FAQ's","Completed Books","Download Codes"};
-	
-			        for (int i = 0; i < names.length; i++) {
-					     HashMap<String, String> map = new HashMap<String, String>();
-			        	 map.put("names_",names[i]);
-				         fillMaps.add( map);
-	
-			        }
-	
-			        SimpleAdapter adapter;
-			        adapter = new SimpleAdapter(getActivity().getApplicationContext(), fillMaps,
-		 				R.layout.text_book_companion, from, to);
-				
-			        final ListView lv = (ListView) rootView.findViewById( R.id.listView1 );
-			        lv.setAdapter(adapter);		
-			        
-			        lv.setOnItemClickListener(new OnItemClickListener() {
-	
-						@Override
-						public void onItemClick(AdapterView a, View v, int position, long id) {
-							
-							if(position==5){
-								Intent intent= new Intent(getActivity(), completed_books.class);
-								intent.putExtra("flag",names[position]);
-								startActivity(intent);
-							}else {
-								Intent intent= new Intent(getActivity(), information.class);
-								intent.putExtra("flag",names[position]);
-								startActivity(intent);
-							}
+
+				String[] from = new String[] {"names_"};
+				int[] to = new int[] {R.id.tvname};
+
+				final List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();
+
+				final String names[] = new String[]{"Textbook Companion Project","Internship","Guidelines for Coding","Honorarium","Textbook Companion FAQ's","Completed Books","Download Codes"};
+
+				for (int i = 0; i < names.length; i++) {
+					HashMap<String, String> map = new HashMap<String, String>();
+					map.put("names_",names[i]);
+					fillMaps.add( map);
+
+				}
+
+				SimpleAdapter adapter;
+				adapter = new SimpleAdapter(getActivity().getApplicationContext(), fillMaps,
+						R.layout.text_book_companion, from, to);
+
+				final ListView lv = (ListView) rootView.findViewById( R.id.listView1 );
+				lv.setAdapter(adapter);		
+
+				lv.setOnItemClickListener(new OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView a, View v, int position, long id) {
+
+						if(position==5){
+							Intent intent= new Intent(getActivity(), completed_books.class);
+							intent.putExtra("flag",names[position]);
+							startActivity(intent);
+						}else {
+							Intent intent= new Intent(getActivity(), information.class);
+							intent.putExtra("flag",names[position]);
+							startActivity(intent);
 						}
-					});
-			      break;
-		
+					}
+				});
+				break;
+			case 9:
+				//lab migration project
+				rootView = inflater.inflate(R.layout.list,container, false);
+
+				String[] title = new String[] {"names_"};
+				int[] tv_ids = new int[] {R.id.tvname};
+
+				final List<HashMap<String, String>> fillMaps1 = new ArrayList<HashMap<String, String>>();
+
+				final String headings[] = new String[]{"Lab Migration Project","Lab Migration Procedure","Lab Migration Honorarium"};
+
+				for (int i = 0; i < headings.length; i++) {
+					HashMap<String, String> map = new HashMap<String, String>();
+					map.put("names_",headings[i]);
+					fillMaps1.add( map);
+
+				}
+
+				SimpleAdapter adapter1;
+				adapter1 = new SimpleAdapter(getActivity().getApplicationContext(), fillMaps1,
+						R.layout.text_book_companion, title, tv_ids);
+
+				final ListView lv1 = (ListView) rootView.findViewById( R.id.listView1 );
+				lv1.setAdapter(adapter1);		
+
+				lv1.setOnItemClickListener(new OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView a, View v, int position, long id) {
+
+						Intent intent= new Intent(getActivity(), information.class);
+						intent.putExtra("flag",headings[position]);
+						startActivity(intent);
+					}
+				});
+				break;
+
 			default:
 				break;
-		}
+			}
 
 			return rootView;
 		}
 
 
 		private void createGroupList() {
-        groupList = new ArrayList<String>();
-        groupList.add("Oscad");
-        groupList.add("KiCad");
-        groupList.add("Ngspice");
-    }
- 
-    private void createCollection() {
-        // preparing FOSS tutorials(child)
-        String[] oscadTutorials = { "1. Introduction to Oscad", "2. Schematic Creation and Simulation using Oscad",
-                "3. Designing PCB using Oscad" };
-        String[] kicadTutorials = { "1. Designing circuit schematic in KiCad", 
-        		"2. Electric rule checking and Netlist generation", 
-        		"3. Mapping components in KiCad",
-        		"4. Designing printed circuit board in KiCad"};
-        String[] ngspiceTutorials = { "1. Operating point analysis in NGspice", "2. DC Sweep Analysis"};
- 
-        tutorials = new LinkedHashMap<String, List<String>>();
- 
-        for (String FOSS : groupList) {
-            if (FOSS.equals("Oscad")) {
-                loadChild(oscadTutorials);
-            }
-            else if (FOSS.equals("KiCad"))
-                loadChild(kicadTutorials);
-            else
-                loadChild(ngspiceTutorials);
- 
-            tutorials.put(FOSS, childList);
-        }
-    }
- 
-    private void loadChild(String[] fossTutorials) {
-        childList = new ArrayList<String>();
-        for (String model : fossTutorials)
-            childList.add(model);
-    }
- 
-    // Convert pixel to dip
-    public int getDipsFromPixel(float pixels) {
-        // Get the screen's density scale
-        final float scale = getResources().getDisplayMetrics().density;
-        // Convert the dps to pixels, based on density scale
-        return (int) (pixels * scale + 0.5f);
-    }
-
+			groupList = new ArrayList<String>();
+			groupList.add("Oscad");
+			groupList.add("KiCad");
+			groupList.add("Ngspice");
 		}
-	
+
+		private void createCollection() {
+			// preparing FOSS tutorials(child)
+			String[] oscadTutorials = { "1. Introduction to Oscad", "2. Schematic Creation and Simulation using Oscad",
+			"3. Designing PCB using Oscad" };
+			String[] kicadTutorials = { "1. Designing circuit schematic in KiCad", 
+					"2. Electric rule checking and Netlist generation", 
+					"3. Mapping components in KiCad",
+			"4. Designing printed circuit board in KiCad"};
+			String[] ngspiceTutorials = { "1. Operating point analysis in NGspice", "2. DC Sweep Analysis"};
+
+			tutorials = new LinkedHashMap<String, List<String>>();
+
+			for (String FOSS : groupList) {
+				if (FOSS.equals("Oscad")) {
+					loadChild(oscadTutorials);
+				}
+				else if (FOSS.equals("KiCad"))
+					loadChild(kicadTutorials);
+				else
+					loadChild(ngspiceTutorials);
+
+				tutorials.put(FOSS, childList);
+			}
+		}
+
+		private void loadChild(String[] fossTutorials) {
+			childList = new ArrayList<String>();
+			for (String model : fossTutorials)
+				childList.add(model);
+		}
+
+		// Convert pixel to dip
+		public int getDipsFromPixel(float pixels) {
+			// Get the screen's density scale
+			final float scale = getResources().getDisplayMetrics().density;
+			// Convert the dps to pixels, based on density scale
+			return (int) (pixels * scale + 0.5f);
+		}
+
+	}
+
 	@Override
 	public void onBackPressed() {
 
