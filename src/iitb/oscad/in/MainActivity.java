@@ -445,10 +445,11 @@ ActionBar.TabListener {
 					@Override
 					public void onItemClick(AdapterView a, View v, int position, long id) {
 
-						if(position==5){
-							Intent intent= new Intent(getActivity(), completed_books.class);
-							intent.putExtra("flag",names[position]);
-							startActivity(intent);
+						if(position==6){
+							String url = "http://oscad.in/textbook_run";
+							Intent i = new Intent(Intent.ACTION_VIEW);
+							i.setData(Uri.parse(url));
+							startActivity(i);	
 						}else {
 							Intent intent= new Intent(getActivity(), information.class);
 							intent.putExtra("flag",names[position]);
