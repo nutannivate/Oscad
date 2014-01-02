@@ -9,10 +9,9 @@
     <string name="title_section4">Contact us</string>
     <string name="title_section5">FAQs</string>
     <string name="title_section6">Weblinks</string>
-    <string name="title_section7">Login</string>
-    <string name="title_section8">Textbook companion</string>
-    <string name="title_section9">Lab migration</string>
-    <string name="title_section10">Workshops</string>
+    <string name="title_section7">Textbook companion</string>
+    <string name="title_section8">Lab migration</string>
+    <string name="title_section9">Workshops</string>
     
     <string name="intro">
        	<p style="text-align: justify; margin-top: 10px; margin-bottom: 5px; margin-left: 20px;"><b>Oscad</b> is an open source EDA tool for circuit design, simulation, analysis and PCB design.  It is an integrated tool built using open source software such as KiCad (<a href="http://www.kicad-pcb.org" title="http://www.kicad-pcb.org">http://www.kicad-pcb.org</a>), Ngspice (<a href="http://ngspice.sourceforge.net/" title="http://ngspice.sourceforge.net/">http://ngspice.sourceforge.net</a>) and Scilab (<a href="http://www.scilab.org/" title="http://www.scilab.org/">http://www.scilab.org</a>).  Oscad is released under GPL.</p>
@@ -114,7 +113,8 @@
     <string name="text_book4">
           1. You should know or learn Oscad. Resources are provided at Oscad Resources. Learning Oscad is easy and 
           if someone listens to and practices the Spoken Tutorials on Oscad, it can be learned in 2-3 days. For use of
-           any software package other than Oscad, contact us at textbookcompanion@oscad.in &lt;br /&gt;&lt;br /&gt;
+           any software package other than Oscad, contact us at 
+           <![CDATA[<a href=\'mailto:textbook-companion@oscad.in\'>textbookcompanion@oscad.in</a>]]> &lt;br /&gt;&lt;br /&gt;
 
 		   2. You should propose three books in the order of your preference, using the proposal 
 		   form available here. You have to create a new account and log in to access the proposal form. 
@@ -122,7 +122,8 @@
 		   Click on Completed Books and Books in Progress to see the respective lists.&lt;br /&gt;
 
 			We will try to allot one of the three proposed books to you. Along with the book proposal, you are required to send a 
-			typical chapter\'s solved examples project file using Oscad from one of the three proposed books to textbook-companion@oscad.in in a .zip or 
+			typical chapter\'s solved examples project file using Oscad from one of the three proposed books to 
+			<![CDATA[<a href=\'mailto:textbook-companion@oscad.in\'>textbookcompanion@oscad.in</a>]]> in a .zip or 
 			.tgz file. We will not contact you to send the code. &lt;br /&gt;
 
 			It is suggested that you propose the book as early as possible,
@@ -157,8 +158,11 @@
 			2. Project name should be same as the example number.(e.g example_2.3) &lt;br /&gt;&lt;br /&gt;
 			3. Give the respective names and values to the elements as given in the book. &lt;br /&gt;&lt;br /&gt;
 			4. Put the plot option at the inputs and outputs. &lt;br /&gt;&lt;br /&gt;
-			5. Use the proper model of the devices as mentioned in the book, if you are unable to find models of device then contact us at textbook-companion@oscad.in. &lt;br /&gt;&lt;br /&gt;
-			6. Once you have completed the project, mail us at textbook-companion@oscad.in with complete details including your name and allotted book. &lt;br /&gt;
+			5. Use the proper model of the devices as mentioned in the book, if you are unable to find models of device then contact us at 
+			<![CDATA[<a href=\'mailto:textbook-companion@oscad.in\'>textbookcompanion@oscad.in</a>]]>. &lt;br /&gt;&lt;br /&gt;
+			6. Once you have completed the project, mail us at 
+			<![CDATA[<a href=\'mailto:textbook-companion@oscad.in\'>textbookcompanion@oscad.in</a>]]> 
+			with complete details including your name and allotted book. &lt;br /&gt;
    	</string>
    	
     <string name="Honorarium">
@@ -221,7 +225,7 @@
     </string>
     <string name="lab_migration3">
         Learn how to submit a proposal here ­ <![CDATA[<a href="http://oscad.in/lab_migration/proposal">http://oscad.in/lab_migration/proposal</a>]]>. &lt;br /&gt;&lt;br /&gt;
-        We can also be reached directly at labmigration@oscad.in.&lt;br /&gt;
+        We can also be reached directly at <![CDATA[<a href=\'mailto:labmigration@oscad.in\'>labmigration@oscad.in</a>]]>.&lt;br /&gt;
     </string>
     <string name="lab_migration4">
         Teachers/Professors/Students from educational institutions across the country can participate in the Lab Migration project. 
@@ -339,7 +343,7 @@
        	<item>The teacher is expected to guide the intern during the internship and will bear 
        	    the responsibility for the student\'s submissions and undertakings.</item>
        	<item>Yes. It is necessary to have a mentor. However, if you are do not have a mentor 
-       	    in such cases, please inform us by e-mail textbook-companion@oscad.in.
+       	    in such cases, please inform us by e-mail <![CDATA[<a href=\'mailto:textbook-companion@oscad.in\'>textbookcompanion@oscad.in</a>]]>.
 			Please note: in case you do not have a mentor, the remuneration meant for 
 			the mentor will not be paid to the intern.</item>
        	<item>Although it isn’t necessary to inform the HOD, the teacher is advised to do so. 
@@ -383,14 +387,14 @@
             activity are available for free downloading. 
             The solved examples can be referred if needed.</item>
         <item>We encourage you to use Oscad. For use of any other open source software 
-            package, contact us at textbook-companion@oscad.in.</item>
+            package, contact us at <![CDATA[<a href=\'mailto:textbook-companion@oscad.in\'>textbookcompanion@oscad.in</a>]]>.</item>
         <item>It takes three days to get a temporary allotment from the day you submit 
             your book proposal. Further, it may take another ten days from the day you 
             submit the temporary allotment code, to get the final allotment. 
             Please contact us only if you haven\'t heard from us in ten days.</item>
         <item>The simulation exercises can be started as soon as the book proposed by you is approved 
             and book allotment is confirmed. The confirmation will be communicated via an automated e­mail.</item>
-        <item>Please contact the Oscad team at textbook-companion@oscad.in 
+        <item>Please contact the Oscad team at <![CDATA[<a href=\'mailto:textbook-companion@oscad.in\'>textbookcompanion@oscad.in</a>]]> 
             and let them know that your solutions are completed.
         </item>
     </string-array>
@@ -451,7 +455,7 @@
         <item>You can buy a one rupee revenue stamp from the Post Office. 
             Here is a scan of a fully filled internship form 
             ­http://oscad.in/files/download/forms/example­filled­receipt.pdf</item>
-        <item>You can contact the Oscad team at textbook-companion@oscad.in.</item>
+        <item>You can contact the Oscad team at <![CDATA[<a href=\'mailto:textbook-companion@oscad.in\'>textbookcompanion@oscad.in</a>]]>.</item>
         
     </string-array>
 </resources>

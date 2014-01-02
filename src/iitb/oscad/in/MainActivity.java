@@ -105,12 +105,12 @@ ActionBar.TabListener {
 		}
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// Inflate the menu; this adds items to the action bar if it is present.
+//		getMenuInflater().inflate(R.menu.main, menu);
+//		return true;
+//	}
 
 	@Override
 	public void onTabSelected(ActionBar.Tab tab,
@@ -155,7 +155,7 @@ ActionBar.TabListener {
 		@Override
 		public int getCount() {
 			// Show 3 total pages.
-			return 10;
+			return 9;
 		}
 
 		@Override
@@ -180,8 +180,6 @@ ActionBar.TabListener {
 				return getString(R.string.title_section8).toUpperCase(l);
 			case 8:
 				return getString(R.string.title_section9).toUpperCase(l);
-			case 9:
-				return getString(R.string.title_section10).toUpperCase(l);
 			}
 			return null;
 		}
@@ -362,11 +360,13 @@ ActionBar.TabListener {
 						"Lab migration : <a href='mailto:lab-migration@oscad.in'>lab-migration@oscad.in</a>",
 						"SELF workshops : <a href='mailto:SELF-workshop@oscad.in'>SELF-workshop@oscad.in</a>",
 						"Oscad development and enhancing its capabilities : <a href='mailto:Oscad-dev@oscad.in'>Oscad-dev@oscad.in</a>",
-				"Feedback on Oscad book : <a href='mailto:Oscad-textbook@oscad.in'>Oscad-textbook@oscad.in</a>"};
-				int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5};
+				"Feedback on Oscad book : <a href='mailto:Oscad-textbook@oscad.in'>Oscad-textbook@oscad.in</a>",
+				"General Queries : <a href='mailto:queries@oscad.in'>queries@oscad.in</a>"};
+				int[] ids = new int[]{R.id.contact1,R.id.contact2,R.id.contact3,R.id.contact4,R.id.contact5,R.id.contact6};
 
 				for (int i = 0; i < contact_to.length; i++) {
 					TextView contentTextView = (TextView) rootView.findViewById(ids[i]);
+					contentTextView.setVisibility(View.VISIBLE);
 					contentTextView.setMovementMethod(LinkMovementMethod.getInstance());
 					contentTextView.setText(Html.fromHtml(contact_to[i]));
 				}
@@ -413,11 +413,8 @@ ActionBar.TabListener {
 					contentTextView.setText(sContact);
 				}
 				break;
+			
 			case 7:
-
-				break;
-
-			case 8:
 				rootView = inflater.inflate(R.layout.list,container, false);
 
 				String[] from = new String[] {"names_"};
@@ -500,7 +497,7 @@ ActionBar.TabListener {
 					}
 				});
 				break;
-			case 9:
+			case 8:
 				//lab migration project
 				rootView = inflater.inflate(R.layout.list,container, false);
 
@@ -525,6 +522,9 @@ ActionBar.TabListener {
 				final ListView lv1 = (ListView) rootView.findViewById( R.id.listView1 );
 				lv1.setAdapter(adapter1);		
 
+				TextView tvname = (TextView)rootView.findViewById(R.id.textView5);
+				tvname.setText("Lab Migration");
+				
 				lv1.setOnItemClickListener(new OnItemClickListener() {
 
 					@Override
@@ -536,7 +536,7 @@ ActionBar.TabListener {
 					}
 				});
 				break;
-			case 10:
+			case 9:
 				rootView = inflater.inflate(R.layout.list,container, false);
 				
 				 String[] from_names = new String[] {"names_"};
