@@ -246,7 +246,7 @@ ActionBar.TabListener {
 				 */
 				TextView windowsInsta = (TextView)rootView.findViewById(R.id.down_oscad_II);
 				windowsInsta.setMovementMethod(LinkMovementMethod.getInstance());
-				String text1 = "<a href='http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf'>Oscad Installation Instructions for Windows</a>";
+				String text1 = "<a href='http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf'>Oscad Installation Instructions for Windows</a>&nbsp;&nbsp;(pdf)";
 				windowsInsta.setText(Html.fromHtml(text1));
 
 				/***
@@ -264,6 +264,8 @@ ActionBar.TabListener {
 				/***
 				 * Download oscad example .
 				 */
+				TextView tv = (TextView)rootView.findViewById(R.id.tvTitle);
+				tv.setText(Html.fromHtml(getString(R.string.space)));
 				Button osExample = (Button)rootView.findViewById(R.id.down_OE);
 				osExample.setOnClickListener(new OnClickListener() {
 

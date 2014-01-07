@@ -458,4 +458,6 @@
         <item>You can contact the Oscad team at <![CDATA[<a href=\'mailto:textbook-companion@oscad.in\'>textbookcompanion@oscad.in</a>]]>.</item>
         
     </string-array>
+    
+    <string name="space">Oscad Examples (469 KB)<![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]></string>
 </resources>

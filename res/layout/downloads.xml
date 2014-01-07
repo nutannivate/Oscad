@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+    android:layout_width="wrap_content"
     android:layout_height="fill_parent"
-    android:background="#15060b">
+    android:background="#15060b" >
      
  <LinearLayout
      android:layout_width="fill_parent"
@@ -11,16 +11,22 @@
      android:layout_marginRight="5dip"
       >
 
-     <TextView
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_gravity="center"
-         android:background="@drawable/shadow"
-         android:padding="10dp"
-         android:text="Installer"
-         android:textColor="#15060b"
-         android:textSize="18sp"
-         android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="3dp" 
+        android:background="#d0ad85" >
+    </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Installer"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:padding="2dp"
+        android:background="#302b31"
+        android:textColor="#d0ad85"
+        android:textSize="18sp" />
 
      <LinearLayout
          android:layout_width="match_parent"
@@ -34,11 +40,11 @@
              android:paddingRight="10dip" 
              android:paddingLeft="5dip" />
 
-         <LinearLayout
-             android:layout_width="fill_parent"
-             android:layout_height="match_parent"
-             android:orientation="horizontal" >
-
+         
+         <HorizontalScrollView 
+				android:layout_width="match_parent"
+            	android:layout_height="match_parent">
+         
              <LinearLayout
                  android:layout_width="fill_parent"
                  android:layout_height="match_parent"
@@ -49,25 +55,24 @@
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"
                      android:layout_gravity="top"
-                     android:padding="5dp"
+                   
                      android:text="Ubuntu Linux"
                      android:textColor="#d0ad85"
                      android:textSize="18sp" />
 
                  <TextView
                      android:id="@+id/down_linux"
-                     android:layout_width="match_parent"
+                     android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:layout_gravity="top"
                      android:layout_weight="0.5"
                      android:clickable="true"
-                     android:padding="5dp"
                      android:textColor="#d0ad85"
                      android:textSize="18sp" />
              </LinearLayout>
+      	</HorizontalScrollView>
+             
            
-         </LinearLayout>
-
      </LinearLayout>
      <LinearLayout
         android:layout_width="match_parent"
@@ -81,16 +86,14 @@
 
          <ImageView
              android:layout_width="60dip"
-             android:layout_height="100dip"
+             android:layout_height="90dip"
              android:src="@drawable/windows"
              android:paddingRight="10dip"
              android:paddingLeft="5dip"   />
 
-         <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="match_parent"
-             android:orientation="horizontal" >
-
+         <HorizontalScrollView 
+             android:layout_width="match_parent"
+                 android:layout_height="match_parent">
              <LinearLayout
                  android:layout_width="378dp"
                  android:layout_height="match_parent"
@@ -100,7 +103,6 @@
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"
                      android:layout_gravity="top"
-                     android:padding="5dp"
                      android:text="Windows XP"
                      android:textColor="#d0ad85"
                      android:textSize="18sp" />
@@ -111,7 +113,6 @@
                      android:layout_height="wrap_content"
                      android:layout_gravity="top"
                      android:clickable="true"
-                     android:padding="5dp"
                      android:textColor="#d0ad85"
                      android:textSize="18sp" />
 				
@@ -121,30 +122,42 @@
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"
                      android:layout_gravity="top"
-                     android:padding="5dp"
                      android:clickable="true"
                      android:textColor="#d0ad85"
                      android:textSize="18sp" />
 				
              </LinearLayout>
-
-                
-         </LinearLayout>
-
-        
+         </HorizontalScrollView>
      </LinearLayout>
+     
      <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="3dp" 
-        android:background="#d0ad85"
-         >
+        android:background="#d0ad85" >
     </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Downloads"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:padding="2dp"
+        android:background="#302b31"
+        android:textColor="#d0ad85"
+        android:textSize="18sp" />
+    
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="3dp" 
+        android:background="#d0ad85" >
+    </LinearLayout>
+    
      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
          android:background="#15060b"
-         android:orientation="horizontal"
-          >
+         android:orientation="horizontal" >
 
          <TextView
              android:layout_width="match_parent"
@@ -152,10 +165,7 @@
              android:layout_gravity="center"
              android:layout_weight="0.5"
              android:background="@drawable/shadow"
-             android:paddingBottom="12dp"
-             android:paddingLeft="20dp"
-             android:paddingRight="20dp"
-             android:paddingTop="10dp"
+             android:padding="2dp"
              android:textColor="#15060b"
              android:text="Oscad Book e-version  (17.3 MB)"
              android:textSize="18sp"
@@ -191,27 +201,19 @@
              android:textSize="18dp" />
      </LinearLayout>
 
- 
-  
-
      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:orientation="horizontal"
-         
-         >
+         android:orientation="horizontal" >
 
          <TextView
+             android:id="@+id/tvTitle"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_gravity="center"
              android:layout_weight="0.5"
              android:background="@drawable/shadow"
-             android:paddingBottom="12dp"
-             android:paddingLeft="20dp"
-             android:paddingRight="20dp"
-             android:paddingTop="10dp"
-             android:text="Oscad Examples  (469 KB)"
+          	 android:padding="2dp"
              android:textSize="18sp"
              android:textColor="#15060b"
              android:textStyle="bold" />
@@ -265,8 +267,7 @@
      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:orientation="horizontal"
-          >
+         android:orientation="horizontal" >
 
          <TextView
              android:layout_width="match_parent"
@@ -274,10 +275,7 @@
              android:layout_gravity="center"
              android:layout_weight="0.5"
              android:background="@drawable/shadow"
-             android:paddingBottom="12dp"
-             android:paddingLeft="20dp"
-             android:paddingRight="20dp"
-             android:paddingTop="10dp"
+             android:padding="2dp"
              android:text="Errata for Oscad book  (42.8 KB)"
              android:textSize="18sp"
              android:textColor="#15060b"
@@ -316,8 +314,7 @@
      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:orientation="horizontal"
-           >
+         android:orientation="horizontal" >
 
          <TextView
              android:layout_width="match_parent"
@@ -325,10 +322,7 @@
              android:layout_gravity="center"
              android:layout_weight="0.5"
              android:background="@drawable/shadow"
-             android:paddingBottom="12dp"
-             android:paddingLeft="20dp"
-             android:paddingRight="20dp"
-             android:paddingTop="10dp"
+             android:padding="2dp"
              android:text="Oscad Companion CD  (270 MB)"
              android:textSize="18sp"
              android:textStyle="bold"
