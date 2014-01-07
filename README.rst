@@ -1,7 +1,12 @@
 An android application for Oscad website
 ----------------------------------------
 
-Refer to `Oscad <http://www.oscad.in/>`_ website for details.
+Oscad is an open source EDA tool for circuit design, simulation, analysis and PCB design. 
+It is an integrated tool built using open source software such as `KiCad <http://www.kicad-pcb.org>`_, 
+`Ngspice <http://ngspice.sourceforge.net/>`_ and `Scilab <http://www.scilab.org/>`_.
+
+Refer to `Oscad <http://www.oscad.in/>`_ website.
+
 This app is compatible with all android devices with minimum API level 11.
 
 License
