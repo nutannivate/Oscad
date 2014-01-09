@@ -233,22 +233,6 @@ ActionBar.TabListener {
 				String link_linux = "<a href='http://www.oscad.in/download/OSCAD_installer.tar.gz'>Oscad Installer - Linux</a>&nbsp;&nbsp;(6.2 MB)";
 				linux1.setText(Html.fromHtml(link_linux));
 
-//				/***
-//				 * Download oscad installer zip file for Windows
-//				 */
-//				TextView windows = (TextView)rootView.findViewById(R.id.down_oscad_IW);
-//				windows.setMovementMethod(LinkMovementMethod.getInstance());
-//				String text = "<a href='http://www.oscad.in/download/Oscad-windows-installer.zip'>Oscad Installer - Windows</a>&nbsp;&nbsp;(150 MB)";
-//				windows.setText(Html.fromHtml(text));
-
-//				/***
-//				 * Download oscad installation instrucion PDF file.
-//				 */
-//				TextView windowsInsta = (TextView)rootView.findViewById(R.id.down_oscad_II);
-//				windowsInsta.setMovementMethod(LinkMovementMethod.getInstance());
-//				String text1 = "<a href='http://www.oscad.in/resource/instruction-sheet/Oscad-Installation-Windows.pdf'>Oscad Installation Instructions for Windows</a>&nbsp;&nbsp;(pdf)";
-//				windowsInsta.setText(Html.fromHtml(text1));
-
 				/***
 				 * Download oscad e-book pdf.
 				 */
