@@ -34,8 +34,8 @@
          android:orientation="horizontal" >
 
          <ImageView
-             android:layout_width="60dip"
-             android:layout_height="wrap_content"
+             android:layout_width="50dip"
+             android:layout_height="60dip"
              android:src="@drawable/linux"
              android:paddingRight="10dip" 
              android:paddingLeft="5dip" />
@@ -74,61 +74,8 @@
              
            
      </LinearLayout>
-     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="3dp" 
-        android:background="#d0ad85" >
-    </LinearLayout>
-	<LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:orientation="horizontal" >
-
-         <ImageView
-             android:layout_width="60dip"
-             android:layout_height="90dip"
-             android:src="@drawable/windows"
-             android:paddingRight="10dip"
-             android:paddingLeft="5dip"   />
-
-         <HorizontalScrollView 
-             android:layout_width="match_parent"
-                 android:layout_height="match_parent">
-             <LinearLayout
-                 android:layout_width="378dp"
-                 android:layout_height="match_parent"
-                 android:orientation="vertical" >
-
-                 <TextView
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_gravity="top"
-                     android:text="Windows XP"
-                     android:textColor="#d0ad85"
-                     android:textSize="18sp" />
-                 
-				<TextView
-				     android:id="@+id/down_oscad_IW"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_gravity="top"
-                     android:clickable="true"
-                     android:textColor="#d0ad85"
-                     android:textSize="18sp" />
-				
-               
-           		<TextView
-           		     android:id="@+id/down_oscad_II"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_gravity="top"
-                     android:clickable="true"
-                     android:textColor="#d0ad85"
-                     android:textSize="18sp" />
-				
-             </LinearLayout>
-         </HorizontalScrollView>
-     </LinearLayout>
+    
+	
      
      <LinearLayout
         android:layout_width="match_parent"
