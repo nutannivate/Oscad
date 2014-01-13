@@ -232,6 +232,14 @@ ActionBar.TabListener {
 				linux1.setMovementMethod(LinkMovementMethod.getInstance());
 				String link_linux = "<a href='http://www.oscad.in/download/OSCAD_installer.tar.gz'>Oscad Installer - Linux</a>&nbsp;&nbsp;(6.2 MB)";
 				linux1.setText(Html.fromHtml(link_linux));
+				linux1.setOnClickListener(new OnClickListener() {
+					                                       
+					@Override
+					public void onClick(View v) {
+						startDownloadingInDefaultBrowser("http://www.oscad.in/download/OSCAD_installer.tar.gz");
+					}
+				});
+
 
 				/***
 				 * Download oscad e-book pdf.
@@ -255,8 +263,7 @@ ActionBar.TabListener {
 
 					@Override
 					public void onClick(View arg0) {
-
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/resource/Examples.tar.gz")));
+						startDownloadingInDefaultBrowser("http://www.oscad.in/resource/Examples.tar.gz");
 					}
 				});
 
@@ -281,7 +288,7 @@ ActionBar.TabListener {
 
 					@Override
 					public void onClick(View arg0) {
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.oscad.in/download/Oscad.zip")));
+						startDownloadingInDefaultBrowser("http://www.oscad.in/download/Oscad.zip");
 					}
 				});
 
@@ -569,6 +576,15 @@ ActionBar.TabListener {
 		}
 
 
+		protected void startDownloadingInDefaultBrowser(String url) {
+			//intent to android's default browser
+			Intent intent_browser = new Intent(Intent.ACTION_VIEW);
+			intent_browser.setClassName("com.android.browser", "com.android.browser.BrowserActivity");
+			intent_browser.setData(Uri.parse(url));
+			startActivity(intent_browser);
+		}
+
+		
 		public static void createGroupList(String[] list) {
 			groupList = new ArrayList<String>();
 			for (int i = 0; i < list.length; i++) {

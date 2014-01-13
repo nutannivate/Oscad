@@ -114,7 +114,7 @@
              android:background="@drawable/shadow"
              android:padding="2dp"
              android:textColor="#15060b"
-             android:text="Oscad Book e-version  (17.3 MB)"
+             android:text="Oscad Book e-version  (17.3 MB pdf)"
              android:textSize="18sp"
              android:textStyle="bold" />
 
@@ -223,7 +223,7 @@
              android:layout_weight="0.5"
              android:background="@drawable/shadow"
              android:padding="2dp"
-             android:text="Errata for Oscad book  (42.8 KB)"
+             android:text="Errata for Oscad book  (42.8 KB pdf)"
              android:textSize="18sp"
              android:textColor="#15060b"
              android:textStyle="bold" />
